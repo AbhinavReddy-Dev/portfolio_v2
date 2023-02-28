@@ -18,57 +18,102 @@ import Header from "../components/Header/index.astro";
 
   <body class="bg-black">
     <div
-      class="grid place-items-center h-screen content-center relative border border-white">
+      class="grid place-items-center h-screen content-center relative border-4 border-white">
       <Header />
       <img
-        src="../../public/logo/PNG/logo_big.png"
+        src="/logo/PNG/logo_big.png"
         alt="Abhinav Reddy Logo"
         class="main-logo z-10 scale-60"
       />
       <div
-        class="menu-ele-1 w-24 h-24 absolute bg-blue-600 -z-0 hover:cursor-pointer">
+        class="menu-ele-1 w-24 h-24 absolute bg-blue-500 -z-0 hover:cursor-pointer border-2 border-white content-center place-items-center grid">
+        <div
+          class="w-23 h-23 absolute hover:animate-ping z-5 hover:cursor-pointer bg-blue-500">
+        </div>
+        <p
+          class="-rotate-38 absolute z-4 text-3xl text-white font-semibold font-devil tracking-widest">
+          PROJECTS
+        </p>
       </div>
       <div
-        class="menu-ele-2 w-24 h-24 absolute bg-violet-600 -z-0 hover:cursor-pointer">
+        class="menu-ele-2 w-24 h-24 absolute bg-violet-500 -z-0 hover:cursor-pointer border-2 border-white content-center place-items-center grid">
+        <div
+          class="w-23 h-23 absolute hover:animate-ping z-5 hover:cursor-pointer bg-violet-500">
+        </div>
+        <p
+          class="-rotate-38 absolute z-4 text-3xl text-white font-semibold font-devil tracking-widest">
+          ABOUT
+        </p>
       </div>
 
       <!-- <Button>Tailwind Button in Astro!</Button> -->
-      <a href="/markdown-page" class="p-4 underline text-blue-500"
-        >Markdown is also supported...</a
-      >
+      <p class="my-info text-lg text-white font-mono animate-text-appear">
+        I am Abhinav Reddy 👨🏻‍💻, I develop UI/UX 🪄, Full-Stack 🖥️ Websites,
+        Mobile Applications 📱...
+      </p>
     </div>
   </body>
-  <script>
-    const menuEle1 = document.querySelector(".menu-ele-1");
-    const menuEle2 = document.querySelector(".menu-ele-2");
-    const mainLogo = document.querySelector(".main-logo");
-    menuEle1.addEventListener("click", () => {
-      console.log("clicked");
-    });
-    menuEle2.addEventListener("click", () => {
-      console.log("clicked");
-    });
-    window.addEventListener("wheel", (e) => {
+</html>
+<script>
+  const menuEle1 = document.querySelector(".menu-ele-1");
+  const menuEle2 = document.querySelector(".menu-ele-2");
+  const mainLogo = document.querySelector(".main-logo");
+  const myInfo = document.querySelector(".my-info");
+  menuEle1.addEventListener("click", () => {
+    console.log("clicked");
+  });
+  menuEle2.addEventListener("click", () => {
+    console.log("clicked");
+  });
+  function debounce(func: any, wait = 1000, immediate = true) {
+    var timeout: number;
+    return function () {
+      var context = this,
+        args = arguments;
+      var later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  }
+  debounce(
+    window.addEventListener("wheel", (e: WheelEvent) => {
       if (e.deltaY > 0) {
-        // console.log("wheel down");
+        console.log("wheel down");
+        myInfo.classList.remove("animate-text-appear");
+        // myInfo.classList.add("invisible");
+        myInfo.classList.add("animate-text-disappear");
+
         mainLogo.classList.remove("animate-scale-logo-lg");
         mainLogo.classList.add("animate-scale-logo-sm");
+
         menuEle1.classList.remove("animate-translate-xy-out-1");
         menuEle1.classList.add("animate-translate-xy-in-1");
+
         menuEle2.classList.remove("animate-translate-xy-out-2");
         menuEle2.classList.add("animate-translate-xy-in-2");
       } else {
-        // console.log("wheel up");
+        console.log("wheel up");
+        myInfo.classList.add("animate-text-appear");
+        myInfo.classList.remove("animate-text-disappear");
+        // myInfo.classList.remove("invisible");
+
         mainLogo.classList.remove("animate-scale-logo-sm");
         mainLogo.classList.add("animate-scale-logo-lg");
+
         menuEle1.classList.remove("animate-translate-xy-in-1");
         menuEle1.classList.add("animate-translate-xy-out-1");
+
         menuEle2.classList.remove("animate-translate-xy-in-2");
         menuEle2.classList.add("animate-translate-xy-out-2");
         // menuEle1.classList.remove("animate-translate-xy-in-1");
         // menuEle1.classList.add("animate-translate-xy-out-1");
       }
-    });
-  </script>
-  <style></style>
-</html>
+    })
+  );
+</script>
+<style></style>
