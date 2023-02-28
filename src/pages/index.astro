@@ -1,25 +1,74 @@
 ---
 // Component Imports
-import Button from '../components/Button.astro';
+import Button from "../components/Button.astro";
+// import Exper from "../components/Header/exper.astro";
 import Header from "../components/Header/index.astro";
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro + TailwindCSS</title>
+  </head>
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Header />
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
+  <body class="bg-black">
+    <div
+      class="grid place-items-center h-screen content-center relative border border-white">
+      <Header />
+      <img
+        src="../../public/logo/PNG/logo_big.png"
+        alt="Abhinav Reddy Logo"
+        class="main-logo z-10 scale-60"
+      />
+      <div
+        class="menu-ele-1 w-24 h-24 absolute bg-blue-600 -z-0 hover:cursor-pointer">
+      </div>
+      <div
+        class="menu-ele-2 w-24 h-24 absolute bg-violet-600 -z-0 hover:cursor-pointer">
+      </div>
+
+      <!-- <Button>Tailwind Button in Astro!</Button> -->
+      <a href="/markdown-page" class="p-4 underline text-blue-500"
+        >Markdown is also supported...</a
+      >
+    </div>
+  </body>
+  <script>
+    const menuEle1 = document.querySelector(".menu-ele-1");
+    const menuEle2 = document.querySelector(".menu-ele-2");
+    const mainLogo = document.querySelector(".main-logo");
+    menuEle1.addEventListener("click", () => {
+      console.log("clicked");
+    });
+    menuEle2.addEventListener("click", () => {
+      console.log("clicked");
+    });
+    window.addEventListener("wheel", (e) => {
+      if (e.deltaY > 0) {
+        // console.log("wheel down");
+        mainLogo.classList.remove("animate-scale-logo-lg");
+        mainLogo.classList.add("animate-scale-logo-sm");
+        menuEle1.classList.remove("animate-translate-xy-out-1");
+        menuEle1.classList.add("animate-translate-xy-in-1");
+        menuEle2.classList.remove("animate-translate-xy-out-2");
+        menuEle2.classList.add("animate-translate-xy-in-2");
+      } else {
+        // console.log("wheel up");
+        mainLogo.classList.remove("animate-scale-logo-sm");
+        mainLogo.classList.add("animate-scale-logo-lg");
+        menuEle1.classList.remove("animate-translate-xy-in-1");
+        menuEle1.classList.add("animate-translate-xy-out-1");
+        menuEle2.classList.remove("animate-translate-xy-in-2");
+        menuEle2.classList.add("animate-translate-xy-out-2");
+        // menuEle1.classList.remove("animate-translate-xy-in-1");
+        // menuEle1.classList.add("animate-translate-xy-out-1");
+      }
+    });
+  </script>
+  <style></style>
 </html>
