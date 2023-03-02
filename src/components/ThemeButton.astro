@@ -1,0 +1,63 @@
+---
+---
+
+<button
+  id="theme_button"
+  class="flex dark:bg-indigo-500 bg-indigo-400 rounded-3xl">
+  <span
+    id="light_theme"
+    class="text-xl hover:cursor-pointer px-2 py-1 rounded-full border-2 border-black dark:border-indigo-500"
+    >🐓</span
+  >
+  <span
+    id="dark_theme"
+    class="text-xl hover:cursor-pointer px-2 py-1 rounded-full border-2 dark:border-white border-indigo-400"
+    >🦉</span
+  >
+</button>
+<script is:inline>
+  const theme_button = document.querySelector("#theme_button");
+  const light_theme = document.querySelector("#light_theme");
+  const dark_theme = document.querySelector("#dark_theme");
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  const set_dark_theme = () => {
+    light_theme.classList.remove("bg-violet-300");
+    // light_theme.classList.remove("border-black");
+    dark_theme.classList.add("bg-blue-300");
+    // dark_theme.classList.add("border-white");
+    document.documentElement.classList.add("dark");
+    window.localStorage.setItem("theme", "dark");
+  };
+
+  const set_light_theme = () => {
+    dark_theme.classList.remove("bg-blue-300");
+    // dark_theme.classList.remove("border-white");
+    light_theme.classList.add("bg-violet-300");
+    // light_theme.classList.add("border-black");
+    window.localStorage.setItem("theme", "light");
+    document.documentElement.classList.remove("dark");
+  };
+  light_theme.addEventListener("click", (e) => {
+    e.preventDefault();
+    set_light_theme();
+  });
+  dark_theme.addEventListener("click", (e) => {
+    e.preventDefault();
+    set_dark_theme();
+  });
+
+  if (theme === "light") {
+    set_light_theme();
+  } else {
+    set_dark_theme();
+  }
+</script>

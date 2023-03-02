@@ -1,0 +1,25 @@
+---
+const { content } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logo/SVG/logo.svg" />
+    <title>{content.title}</title>
+  </head>
+  <body
+    class="relative bg-gradient-to-l to-indigo-300 from-sky-300 dark:to-indigo-900 dark:from-sky-900">
+    <div
+      class="fixed h-screen w-screen border-4 border-black dark:border-white -z-5">
+    </div>
+    <slot />
+  </body>
+</html>
+
+<style>
+  body {
+    /* background-image: url("/logo/PNG/background_big.png"); */
+  }
+</style>

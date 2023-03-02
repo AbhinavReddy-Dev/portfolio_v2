@@ -1,70 +1,103 @@
 ---
 // Component Imports
-import Button from "../components/Button.astro";
+// import Button from "../components/Button.astro";
 // import Exper from "../components/Header/exper.astro";
-import Header from "../components/Header/index.astro";
+// import Header from "../components/Header/index.astro";
+import ThemeButton from "../components/ThemeButton.astro";
+import Layout from "../layouts/page.astro";
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro + TailwindCSS</title>
-  </head>
-
-  <body class="bg-black">
-    <div
-      class="grid place-items-center h-screen content-center relative border-4 border-white">
-      <Header />
+<Layout content={{ title: "Abhinav Reddy" }}>
+  <div class="grid place-items-center -h-screen content-center relative">
+    <div class="absolute top-10 right-10">
+      <ThemeButton />
+    </div>
+    <div class="main-logo z-10 scale-60 bg-main-bg-dark dark:bg-main-bg-light">
       <img
         src="/logo/PNG/logo_big.png"
         alt="Abhinav Reddy Logo"
-        class="main-logo z-10 scale-60"
+        class="opacity-0 main-logo z-10 scale-60"
       />
-      <div
-        class="menu-ele-1 w-24 h-24 absolute bg-blue-500 -z-0 hover:cursor-pointer border-2 border-white content-center place-items-center grid">
-        <div
-          class="w-23 h-23 absolute hover:animate-ping z-5 hover:cursor-pointer bg-blue-500">
-        </div>
-        <p
-          class="-rotate-38 absolute z-4 text-3xl text-white font-semibold font-devil tracking-widest">
-          PROJECTS
-        </p>
-      </div>
-      <div
-        class="menu-ele-2 w-24 h-24 absolute bg-violet-500 -z-0 hover:cursor-pointer border-2 border-white content-center place-items-center grid">
-        <div
-          class="w-23 h-23 absolute hover:animate-ping z-5 hover:cursor-pointer bg-violet-500">
-        </div>
-        <p
-          class="-rotate-38 absolute z-4 text-3xl text-white font-semibold font-devil tracking-widest">
-          ABOUT
-        </p>
-      </div>
-
-      <!-- <Button>Tailwind Button in Astro!</Button> -->
-      <p class="my-info text-lg text-white font-mono animate-text-appear">
-        I am Abhinav Reddy 👨🏻‍💻, I develop UI/UX 🪄, Full-Stack 🖥️ Websites,
-        Mobile Applications 📱...
-      </p>
     </div>
-  </body>
-</html>
+    <!-- <img
+      src="/logo/PNG/logo_big.png"
+      alt="Abhinav Reddy Logo"
+      class="dark:block hidden main-logo z-10 scale-60"
+    /> -->
+    <!-- 
+    <img
+      src="/logo/PNG/logo_dark_big.png"
+      alt="Abhinav Reddy Logo"
+      class="block dark:hidden main-logo z-10 scale-60"
+    /> -->
+
+    <div
+      class="menu-ele-1 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      <div
+        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-blue-400 filter blur-sm opacity-80 animate-menu-bg-motion">
+      </div>
+      <a
+        href="/projects"
+        class="-rotate-38 absolute z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        PROJECTS
+      </a>
+    </div>
+    <div
+      class="menu-ele-2 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      <div
+        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-indigo-500 filter blur-sm opacity-80 animate-menu-bg-motion-2">
+      </div>
+      <a
+        href="/about_me"
+        class="-rotate-38 fixed z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        ABOUT ME
+      </a>
+    </div>
+    <div
+      class="menu-ele-3 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      <div
+        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-blue-400 filter blur-sm opacity-80 animate-menu-bg-motion-3">
+      </div>
+      <a
+        href="/contact_me"
+        class="-rotate-38 absolute z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        CONTACT ME
+      </a>
+    </div>
+    <div
+      class="menu-ele-4 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      <div
+        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-indigo-500 filter blur-sm opacity-80 animate-menu-bg-motion-4">
+      </div>
+      <a
+        href="/blog_posts"
+        class="-rotate-38 absolute z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        BLOG POSTS
+      </a>
+    </div>
+    <!-- <Button>Tailwind Button in Astro!</Button> -->
+    <h2
+      class="my-info text-lg dark:text-white text-black font-mono animate-text-appear p-6">
+      I am <span class="text-xl font-bold font-mono">Abhinav Reddy</span> 👨🏻‍💻, I develop
+      UI/UX 🪄, Full-Stack Websites 🖥️ and Mobile Applications📱.
+    </h2>
+  </div>
+</Layout>
 <script>
   const menuEle1 = document.querySelector(".menu-ele-1");
   const menuEle2 = document.querySelector(".menu-ele-2");
+  const menuEle3 = document.querySelector(".menu-ele-3");
+  const menuEle4 = document.querySelector(".menu-ele-4");
+
   const mainLogo = document.querySelector(".main-logo");
+  // window.localStorage.getItem("theme") === "light"
+  //   ? mainLogo.setAttribute("src", "/logo/PNG/logo_black_border_big.png")
+  //   : mainLogo.setAttribute("src", "/logo/PNG/logo_big.png");
+  // /logo/PNG/logo_black_border.png
   const myInfo = document.querySelector(".my-info");
-  menuEle1.addEventListener("click", () => {
-    console.log("clicked");
-  });
-  menuEle2.addEventListener("click", () => {
-    console.log("clicked");
-  });
+
   function debounce(func: any, wait = 1000, immediate = true) {
     var timeout: number;
     return function () {
@@ -96,6 +129,12 @@ import Header from "../components/Header/index.astro";
 
         menuEle2.classList.remove("animate-translate-xy-out-2");
         menuEle2.classList.add("animate-translate-xy-in-2");
+
+        menuEle3.classList.remove("animate-translate-xy-out-3");
+        menuEle3.classList.add("animate-translate-xy-in-3");
+
+        menuEle4.classList.remove("animate-translate-xy-out-4");
+        menuEle4.classList.add("animate-translate-xy-in-4");
       } else {
         console.log("wheel up");
         myInfo.classList.add("animate-text-appear");
@@ -110,6 +149,12 @@ import Header from "../components/Header/index.astro";
 
         menuEle2.classList.remove("animate-translate-xy-in-2");
         menuEle2.classList.add("animate-translate-xy-out-2");
+
+        menuEle3.classList.remove("animate-translate-xy-in-3");
+        menuEle3.classList.add("animate-translate-xy-out-3");
+
+        menuEle4.classList.remove("animate-translate-xy-in-4");
+        menuEle4.classList.add("animate-translate-xy-out-4");
         // menuEle1.classList.remove("animate-translate-xy-in-1");
         // menuEle1.classList.add("animate-translate-xy-out-1");
       }

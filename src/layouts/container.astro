@@ -1,0 +1,19 @@
+---
+// Container for all page content
+import Header from "../components/Header/index.astro";
+
+const { content } = Astro.props;
+---
+
+<div
+  class="relative max-w-screen-lg container mx-auto border-0 border-red-300 z-10 items-center">
+  <Header />
+  <div class="mt-10 mx-4">
+    <h2
+      class="text-2xl sm:text-4xl font-devil font-bold tracking-widest dark:text-white">
+      {content.title}
+    </h2>
+    <slot />
+  </div>
+  <div class="h-screen"></div>
+</div>
