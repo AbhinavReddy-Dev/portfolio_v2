@@ -30,6 +30,9 @@ module.exports = {
         19: "4.75rem",
         23: "5.75rem",
       },
+      cursor: {
+        logo: "url('/logo/logo_bg.cur'), pointer",
+      },
       backgroundImage: {
         "main-bg-light": "url('/logo/PNG/logo_big.png')",
         "main-bg-dark": "url('/logo/PNG/logo_dark_big.png')",
