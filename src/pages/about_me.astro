@@ -1,8 +1,13 @@
 ---
 import Container from "../layouts/container.astro";
 import Layout from "../layouts/page.astro";
+
+const title = "About Me";
+const id = "about_me";
 ---
 
-<Layout content={{ title: "About Me" }}>
-  <Container content={{ title: "About Me" }} />
+<Layout content={{ title, id }}>
+  <Container content={{ title, id }}>
+    <p class="font-mono text-black dark:text-white">I'm a software engineer.</p>
+  </Container>
 </Layout>

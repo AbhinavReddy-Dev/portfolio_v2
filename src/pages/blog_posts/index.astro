@@ -2,8 +2,9 @@
 import Container from "../../layouts/container.astro";
 import Layout from "../../layouts/page.astro";
 const title = "Blog Posts";
+const id = "blog_posts";
 ---
 
-<Layout content={{ title }}>
-  <Container content={{ title }} />
+<Layout content={{ title, id }}>
+  <Container content={{ title, id }} />
 </Layout>
