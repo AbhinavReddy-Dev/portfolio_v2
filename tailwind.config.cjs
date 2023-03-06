@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        devil: ["Devil Breeze", "cursive"],
+        devil: ["Devil Breeze", "Avenir Next", "sans-serif"],
       },
       scale: {
         25: ".25",
@@ -31,7 +31,7 @@ module.exports = {
         23: "5.75rem",
       },
       cursor: {
-        logo: "url('/logo/logo_bg.cur'), pointer",
+        logo: "url(/logo/logo_bg.cur), pointer",
       },
       backgroundImage: {
         "main-bg-light": "url('/logo/PNG/logo_big.png')",
@@ -185,7 +185,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundImage: ["dark"],
+      // backgroundImage: ["dark"],
     },
   },
+  plugins: [require("tailwindcss"), require("autoprefixer")],
 };

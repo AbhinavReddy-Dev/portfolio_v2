@@ -7,12 +7,14 @@ const { content } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/logo/SVG/logo.svg" />
+    <script src="../components/ThemeButton.ts"></script>
     <title>{content.title}</title>
   </head>
   <body
-    class="relative bg-gradient-to-l to-indigo-300 from-sky-300 dark:to-indigo-900 dark:from-sky-800">
+    class="transform-none relative bg-sky-200 dark:bg-black bg-gradient-to-bl to-violet-300 via-indigo-300 from-sky-300 dark:to-violet-900 dark:via-indigo-800 dark:from-sky-700 min-h-screen">
+    <!-- border-4 border-t-0 border-black dark:border-white -->
     <div
-      class="fixed h-screen w-screen border-4 border-black dark:border-white -z-10">
+      class="fixed h-screen w-screen border-4 border-black dark:border-white -z-20">
     </div>
     <slot />
   </body>

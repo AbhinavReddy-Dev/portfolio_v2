@@ -1,21 +1,23 @@
 ---
 // Component Imports
-// import Button from "../components/Button.astro";
-// import Exper from "../components/Header/exper.astro";
-// import Header from "../components/Header/index.astro";
 import ThemeButton from "../components/ThemeButton.astro";
 import Layout from "../layouts/page.astro";
+import Header from "../components/Header/index.astro";
+import Container from "../layouts/container.astro";
+const title = "Abhinav Reddy";
+const id = "home";
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <Layout content={{ title: "Abhinav Reddy" }}>
-  <div class="grid place-items-center h-screen content-center relative my-0">
+  <div
+    class="hidden lg:grid place-items-center h-screen content-center relative my-0">
     <div class="absolute top-10 right-10">
       <ThemeButton />
     </div>
     <div
-      class="main-logo z-20 scale-60 bg-main-bg-dark dark:bg-main-bg-light cursor-logo">
+      class="main-logo z-20 scale-60 bg-main-bg-dark dark:bg-main-bg-light hover:cursor-logo">
       <img
         src="/logo/PNG/logo_big.png"
         alt="Abhinav Reddy Logo"
@@ -68,10 +70,13 @@ import Layout from "../layouts/page.astro";
     </div>
     <!-- <Button>Tailwind Button in Astro!</Button> -->
     <h2
-      class="absolute bottom-28 my-info text-lg dark:text-white text-black font-mono animate-text-appear p-6 text-center">
+      class="absolute bottom-28 my-info text-lg dark:text-white text-black font-mono animate-text-appear p-6 text-center z-20 backdrop-blur-sm">
       I am <span class="text-xl font-bold font-mono">Abhinav Reddy</span> 👨🏻‍💻, I develop
       UI/UX 🪄, Full-Stack Websites 🖥️ and Mobile Applications📱.
     </h2>
+  </div>
+  <div class="flex w-screen lg:hidden">
+    <Header content={(title, id)} />
   </div>
 </Layout>
 <script>
@@ -157,4 +162,3 @@ import Layout from "../layouts/page.astro";
     else animate();
   });
 </script>
-<style></style>
