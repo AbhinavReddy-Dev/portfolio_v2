@@ -13,7 +13,7 @@ const theme = (() => {
 })();
 
 const set_dark_theme = () => {
-  light_theme?.classList.remove("bg-violet-300");
+  light_theme?.classList.remove("bg-violet-400");
   // light_theme.classList.remove("border-black");
   dark_theme?.classList.add("bg-blue-300");
   // dark_theme.classList.add("border-white");
@@ -24,7 +24,7 @@ const set_dark_theme = () => {
 const set_light_theme = () => {
   dark_theme?.classList.remove("bg-blue-300");
   // dark_theme.classList.remove("border-white");
-  light_theme?.classList.add("bg-violet-300");
+  light_theme?.classList.add("bg-violet-400");
   // light_theme.classList.add("border-black");
   window.localStorage.setItem("theme", "light");
   document.documentElement.classList.remove("dark");
@@ -44,3 +44,5 @@ if (theme === "light") {
 } else {
   set_dark_theme();
 }
+
+export {};

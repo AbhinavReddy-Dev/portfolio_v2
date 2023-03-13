@@ -1,0 +1,21 @@
+---
+import Container from "./container.astro";
+import Layout from "./page.astro";
+import type { MarkdownLayoutProps } from "astro";
+
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+  id: string;
+}>;
+
+const {
+  frontmatter: { title, id },
+} = Astro.props;
+---
+
+<Layout content={{ title, id }}>
+  <Container content={{ title, id }}>
+    <slot />
+  </Container>
+</Layout>

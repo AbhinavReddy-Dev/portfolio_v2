@@ -6,16 +6,16 @@ import ThemeButton from "../ThemeButton.astro";
 ---
 
 <nav
-  class="w-full px-5 sm:px-5 z-20 sticky top-0 backdrop-blur-md py-3 border-t-4 border-r-4 border-l-4 border-black dark:border-white font-mono">
+  class="w-full z-20 sticky top-0 border-t-4 border-r-4 border-l-4 border-black dark:border-white font-mono">
   <div
-    class="flex mx-auto max-w-screen-lg flex-wrap items-center justify-between">
-    <a href="/" class="flex items-center">
+    class="flex mx-auto px-5 sm:px-5 py-3 max-w-screen-lg flex-wrap items-center justify-between backdrop-blur-md">
+    <a href="/" class="flex items-center pl-4">
       <div
-        class="w-12 h-12 mr-3 sm:w-14 sm:h-14 bg-nav-bg-dark dark:bg-nav-bg-light bg-no-repeat bg-center bg-cover">
+        class="w-12 h-12 sm:w-14 sm:h-14 bg-nav-bg-dark dark:bg-nav-bg-light bg-no-repeat bg-center bg-cover">
         <img
-          src="/logo/PNG/logo.png"
+          src="/logo/SVG/logo.svg"
           alt="Abhinav Reddy Logo"
-          class="opacity-0 w-8 h-8 mr-3 sm:w-14 sm:h-14"
+          class="opacity-0 w-8 h-8 sm:w-14 sm:h-14"
         />
       </div>
       <!-- <span
@@ -27,7 +27,7 @@ import ThemeButton from "../ThemeButton.astro";
     <button
       data-collapse-toggle="navbar-sticky"
       type="button"
-      class="inline-flex md:order-2 items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      class="inline-flex md:order-2 items-center p-2 text-sm text-black rounded-lg md:hidden hover:bg-indigo-300 focus:outline-none focus:ring-2 dark:text-white dark:hover:bg-indigo-700 dark:focus:ring-gray-600"
       aria-controls="navbar-sticky"
       aria-expanded="false">
       <span class="sr-only">Open main menu</span>
@@ -52,27 +52,27 @@ import ThemeButton from "../ThemeButton.astro";
         <a
           href="/about_me#about_me"
           id="about_me"
-          class="block h-fit my-auto px-4 py-1 border-2 border-transparent dark:text-white text-black hover:border-b-2 hover:dark:border-violet-400 hover:border-violet-600 target:border-2 target:border-black target:dark:border-white focus:outline-none">
+          class="block h-fit my-auto px-2 py-1 border-2 border-transparent dark:text-white text-black hover:border-b-2 hover:dark:border-violet-400 hover:border-violet-600 target:border-2 target:border-black target:dark:border-white focus:outline-none">
           About Me</a
         >
         <a
           href="/projects#projects"
           id="projects"
-          class="block h-fit my-auto px-4 py-1 border-2 border-transparent dark:text-white text-black hover:border-b-2 hover:dark:border-violet-400 hover:border-violet-600 target:border-2 target:border-black target:dark:border-white focus:outline-none"
+          class="block h-fit my-auto px-2 py-1 border-2 border-transparent dark:text-white text-black hover:border-b-2 hover:dark:border-violet-400 hover:border-violet-600 target:border-2 target:border-black target:dark:border-white focus:outline-none"
           >Projects</a
         >
         <a
           href="/blog_posts#blog_posts"
           id="blog_posts"
-          class="block h-fit my-auto px-4 py-1 border-2 border-transparent dark:text-white text-black hover:border-b-2 hover:dark:border-violet-400 hover:border-violet-600 target:border-2 target:border-black target:dark:border-white focus:outline-none"
+          class="block h-fit my-auto px-2 py-1 border-2 border-transparent dark:text-white text-black hover:border-b-2 hover:dark:border-violet-400 hover:border-violet-600 target:border-2 target:border-black target:dark:border-white focus:outline-none"
           >Blog Posts</a
         >
-        <a
+        <!-- <a
           href="/contact_me#contact_me"
           id="contact_me"
-          class="block h-fit my-auto px-4 py-1 border-2 border-transparent dark:text-white text-black hover:border-b-2 hover:dark:border-violet-400 hover:border-violet-600 target:border-2 target:border-black target:dark:border-white focus:outline-none"
+          class="block h-fit my-auto px-2 py-1 border-2 border-transparent dark:text-white text-black hover:border-b-2 hover:dark:border-violet-400 hover:border-violet-600 target:border-2 target:border-black target:dark:border-white focus:outline-none"
           >Contact Me</a
-        >
+        > -->
         <ThemeButton />
       </ul>
     </div>

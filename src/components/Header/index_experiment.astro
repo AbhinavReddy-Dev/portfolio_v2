@@ -1,0 +1,164 @@
+---
+// Component Imports
+import ThemeButton from "../../components/ThemeButton.astro";
+import Layout from "../../layouts/page.astro";
+import Header from "../../components/Header/index.astro";
+import Container from "../../layouts/container.astro";
+const title = "Abhinav Reddy";
+const id = "home";
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<Layout content={{ title: "Abhinav Reddy" }}>
+  <div
+    class="hidden lg:grid place-items-center h-screen content-center relative my-0">
+    <div class="absolute top-10 right-10">
+      <ThemeButton />
+    </div>
+    <div
+      class="transform-gpu main-logo z-20 scale-60 bg-main-bg-dark dark:bg-main-bg-light hover:cursor-logo">
+      <img
+        src="/logo/PNG/logo_big.png"
+        alt="Abhinav Reddy Logo"
+        class="opacity-0 main-logo z-10 scale-60"
+      />
+    </div>
+    <div
+      class="menu-ele-1 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      <div
+        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-blue-400 filter blur-sm opacity-80 animate-menu-bg-motion">
+      </div>
+      <a
+        href="/projects#projects"
+        class="-rotate-38 absolute z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        PROJECTS
+      </a>
+    </div>
+    <div
+      class="menu-ele-2 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      <div
+        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-indigo-500 filter blur-sm opacity-80 animate-menu-bg-motion-2">
+      </div>
+      <a
+        href="/about_me#about_me"
+        class="-rotate-38 fixed z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        ABOUT ME
+      </a>
+    </div>
+    <div
+      class="menu-ele-3 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      <div
+        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-blue-400 filter blur-sm opacity-80 animate-menu-bg-motion-3">
+      </div>
+      <a
+        href="/contact_me#contact_me"
+        class="-rotate-38 absolute z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        CONTACT ME
+      </a>
+    </div>
+    <div
+      class="menu-ele-4 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      <div
+        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-indigo-500 filter blur-sm opacity-80 animate-menu-bg-motion-4">
+      </div>
+      <a
+        href="/blog_posts#blog_posts"
+        class="-rotate-38 absolute z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        BLOG POSTS
+      </a>
+    </div>
+    <!-- <Button>Tailwind Button in Astro!</Button> -->
+    <h2
+      class="absolute bottom-28 my-info text-lg dark:text-white text-black font-mono animate-text-appear p-6 text-center z-20 backdrop-blur-sm">
+      I am <span class="text-xl font-bold font-mono">Abhinav Reddy</span> 👨🏻‍💻, I develop
+      UI/UX 🪄, Full-Stack Websites 🖥️ and Mobile Applications📱.
+    </h2>
+  </div>
+  <div class="flex w-screen lg:hidden">
+    <Header content={(title, id)} />
+  </div>
+</Layout>
+<script>
+  const menuEle1: HTMLDivElement = document.querySelector(".menu-ele-1");
+  const menuEle2: HTMLDivElement = document.querySelector(".menu-ele-2");
+  const menuEle3: HTMLDivElement = document.querySelector(".menu-ele-3");
+  const menuEle4: HTMLDivElement = document.querySelector(".menu-ele-4");
+
+  const mainLogo: HTMLDivElement = document.querySelector(".main-logo");
+
+  const myInfo: HTMLHeadingElement = document.querySelector(".my-info");
+
+  var is_animated: boolean = false;
+
+  function debounce(func: any, wait = 1000, immediate = true) {
+    var timeout: number;
+    return function () {
+      var context = this,
+        args = arguments;
+      var later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  }
+  function animate() {
+    myInfo.classList.remove("animate-text-appear");
+    myInfo.classList.add("animate-text-disappear");
+
+    mainLogo.classList.remove("animate-scale-logo-lg");
+    mainLogo.classList.add("animate-scale-logo-sm");
+
+    menuEle1.classList.remove("animate-translate-xy-out-1");
+    menuEle1.classList.add("animate-translate-xy-in-1");
+
+    menuEle2.classList.remove("animate-translate-xy-out-2");
+    menuEle2.classList.add("animate-translate-xy-in-2");
+
+    menuEle3.classList.remove("animate-translate-xy-out-3");
+    menuEle3.classList.add("animate-translate-xy-in-3");
+
+    menuEle4.classList.remove("animate-translate-xy-out-4");
+    menuEle4.classList.add("animate-translate-xy-in-4");
+
+    is_animated = true;
+  }
+  function deanimate() {
+    myInfo.classList.add("animate-text-appear");
+    myInfo.classList.remove("animate-text-disappear");
+
+    mainLogo.classList.remove("animate-scale-logo-sm");
+    mainLogo.classList.add("animate-scale-logo-lg");
+
+    menuEle1.classList.remove("animate-translate-xy-in-1");
+    menuEle1.classList.add("animate-translate-xy-out-1");
+
+    menuEle2.classList.remove("animate-translate-xy-in-2");
+    menuEle2.classList.add("animate-translate-xy-out-2");
+
+    menuEle3.classList.remove("animate-translate-xy-in-3");
+    menuEle3.classList.add("animate-translate-xy-out-3");
+
+    menuEle4.classList.remove("animate-translate-xy-in-4");
+    menuEle4.classList.add("animate-translate-xy-out-4");
+
+    is_animated = false;
+  }
+  debounce(
+    window.addEventListener("wheel", (e: WheelEvent) => {
+      if (e.deltaY > 0) {
+        animate();
+      } else {
+        deanimate();
+      }
+    })
+  );
+  mainLogo.addEventListener("click", () => {
+    if (is_animated) deanimate();
+    else animate();
+  });
+</script>
