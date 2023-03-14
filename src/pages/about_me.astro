@@ -8,8 +8,45 @@ const id = "about_me";
 
 <Layout content={{ title, id }}>
   <Container content={{ title, id }}>
-    <p class="font-mono text-black dark:text-white">I'm a software engineer.</p>
-    <div class="h-screen"></div>
-    <div class="h-screen"></div>
+    <p class="font-mono text-black dark:text-white">
+      I'm Abhinav Merugu, a Software Engineer with a passion for web and mobile
+      application development. With 3 years of experience in the field, I am
+      currently pursuing my Masters in Computer Science at CSU Chico and have a
+      GPA of 3.7.
+    </p>
+    <p class="font-mono text-black dark:text-white mt-4">
+      My expertise lies in web development, where I have strong knowledge of
+      React, TypeScript, JavaScript, C++, Python, Redux, GatsbyJS, NextJS,
+      Django, REST APIs, ExpressJS, Astro, Jest unit testing, and more. I'm also
+      experienced in mobile application development and have knowledge in
+      Machine Learning.
+    </p>
+    <p class="font-mono text-black dark:text-white mt-4">
+      My attention to detail and focus on UX and UI design are integral to my
+      work, and I strive to create products that are both beautiful and
+      functional. I'm a quick learner, adaptable, and am always looking for
+      opportunities to grow and improve my skill set. I have earned over 6
+      certifications from Interaction Design Foundation, which highlights my
+      dedication to learning and staying on top of the latest industry trends.
+    </p>
+
+    <div aria-label="resume" class="flex items-center mt-10">
+      <p class="font-bold mr-4">Resume</p>
+      <a
+        title="View Resume"
+        href="/resume.pdf"
+        target="_blank"
+        class="bg-sky-300 dark:bg-blue-500 text-xl text-center mr-2 px-4 py-3 rounded-md leading-3 hover:scale-105"
+        ><ion-icon name="eye-outline"></ion-icon></a
+      >
+      <a
+        title="Download Resume"
+        href="/resume.pdf"
+        target="_blank"
+        download="resume_abhinavmerugu"
+        class="bg-emerald-200 dark:bg-teal-500 text-xl text-center ml-2 px-4 py-3 rounded-md leading-3 hover:scale-105"
+        ><ion-icon name="cloud-download-outline"></ion-icon></a
+      >
+    </div>
   </Container>
 </Layout>

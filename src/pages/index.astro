@@ -8,51 +8,67 @@ const id = "abhinav-reddy";
 
 <Layout content={{ title, id }}>
   <Container content={{ title: "", id }}>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 min-h-96 my-auto">
+    <div
+      class="flex flex-col gap-5 md:grid md:grid-rows-2 md:grid-cols-3 md:gap-10 min-h-100 my-auto">
       <div
-        class="order-last lg:order-1 lg:col-span-2 flex flex-col gap-4 p-2 my-auto text-center lg:text-left">
+        class="order-2 row-start-2 md:order-1 md:col-span-2 md:row-start-1 col-start-1 flex flex-col gap-4 p-2 my-auto text-center md:text-left">
+        <p class="font-mono text-sm text-indigo-800 dark:text-sky-200">
+          Hi, I'm
+        </p>
         <h2
           class="text-2xl sm:text-4xl font-mono font-semibold tracking-wide dark:text-white underline">
           {title}
         </h2>
         <p class="font-mono text-black dark:text-white">
-          I'm a software engineer building websites and mobile applications. I'm
+          A software engineer building websites and mobile applications. I'm
           currently pursuing masters in Computer Science at the California State
           University, Chico. In my freetime I experiement with new technologies
           and contribute to open source code.
         </p>
         <div
-          class="flex flex-wrap gap-6 gap-y-5 lg:gap-x-10 w-full justify-center lg:justify-start my-5">
+          class="flex flex-wrap gap-6 gap-y-5 lg:gap-x-10 w-full justify-center md:justify-start my-5">
           <!-- linkedIn -->
           <a
             href="https://www.linkedin.com/in/abhinavreddy-dev/"
             target="_blank">
             <ion-icon
               name="logo-linkedin"
-              class="w-10 h-10 text-black dark:text-white hover:cursor-pointer hover:dark:text-sky-200 hover:text-sky-900">
+              class="w-10 h-10 text-black dark:text-white hover:cursor-pointer hover:dark:text-sky-200 hover:text-sky-900 hover:scale-105">
             </ion-icon>
           </a>
           <!-- github -->
           <a href="https://github.com/AbhinavReddy-Dev" target="_blank">
             <ion-icon
               name="logo-github"
-              class="w-10 h-10 text-black dark:text-white hover:cursor-pointer hover:dark:text-sky-200 hover:text-sky-900">
+              class="w-10 h-10 text-black dark:text-white hover:cursor-pointer hover:dark:text-sky-200 hover:text-sky-900 hover:scale-105">
             </ion-icon>
           </a>
           <!-- email -->
           <a href="mailto:abhinavreddy.dev@gmail.com" target="_blank">
             <ion-icon
               name="mail"
-              class="w-10 h-10 text-black dark:text-white hover:cursor-pointer hover:dark:text-sky-200 hover:text-sky-900">
+              class="w-10 h-10 text-black dark:text-white hover:cursor-pointer hover:dark:text-sky-200 hover:text-sky-900 hover:scale-105">
             </ion-icon>
           </a>
         </div>
       </div>
       <img
-        class="order-1 lg:order-last w-56 h-56 flex-col mx-auto p-0 rounded-full max-h-fit"
-        src="/profile.jpeg"
+        class="order-1 bg-gradient-to-r from-violet-400 via-indigo-400 to-sky-400 animate-bg-animation md:row-start-1 md:col-start-3 w-56 flex-col mx-auto p-0 rounded-full max-h-fit opacity-90 border-b-4 border-black dark:border-white"
+        src="/profile.png"
         alt="Abhinav Reddy"
       />
+      <a
+        href="https://holopin.io/@abhinavreddydev"
+        class="relative order-3 row-span-1 col-span-3 p-3">
+        <div
+          class="absolute mx-auto inset-x-0 w-4/5 h-3/5 rounded-xl bg-gray-500 animate-pulse scale-100">
+        </div>
+        <img
+          src="https://holopin.me/abhinavreddydev"
+          alt="@abhinavreddydev's Holopin board"
+          class="rounded-xl w-full cursor-pointer transform-gpu duration-100 hover:scale-105"
+        />
+      </a>
     </div>
   </Container>
 </Layout>

@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         devil: ["Devil Breeze", "Avenir Next", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       scale: {
         25: ".25",
@@ -56,8 +57,15 @@ module.exports = {
         "scale-logo-lg": "scale-logo-lg 1s forwards ease-in-out",
         "text-appear": "text-appear 1s forwards ease-in-out",
         "text-disappear": "text-disappear 1s forwards ease-in-out",
+        "bg-animation": "bg-animation 5s infinite ease",
       },
       keyframes: {
+        //background gradient animation
+        "bg-animation": {
+          "0%": { backgroundSize: "500%", backgroundPosition: "0% 0%" },
+          "100%": { backgroundSize: "500%", backgroundPosition: "0% 50%" },
+          "50%": { backgroundSize: "500%", backgroundPosition: "100% 50%" },
+        },
         // Animation for the logo
         "scale-logo-sm": {
           "0%": { transform: "scale(0.6)" },
@@ -185,7 +193,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      // backgroundImage: ["dark"],
+      backgroundImage: ["dark"],
     },
   },
   plugins: [require("tailwindcss"), require("autoprefixer")],

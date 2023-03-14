@@ -1,4 +1,5 @@
 ---
+import ProjectCard from "../components/ProjectCard.astro";
 import Container from "../layouts/container.astro";
 import Layout from "../layouts/page.astro";
 const title = "Projects";
@@ -6,5 +7,7 @@ const id = "projects";
 ---
 
 <Layout content={{ title, id }}>
-  <Container content={{ title, id }} />
+  <Container content={{ title, id }}>
+    <ProjectCard />
+  </Container>
 </Layout>
