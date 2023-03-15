@@ -196,5 +196,9 @@ module.exports = {
       backgroundImage: ["dark"],
     },
   },
-  plugins: [require("tailwindcss"), require("autoprefixer")],
+  plugins: [
+    require("tailwindcss"),
+    require("autoprefixer"),
+    require("@tailwindcss/line-clamp"),
+  ],
 };

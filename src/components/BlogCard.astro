@@ -1,0 +1,62 @@
+---
+const {
+  content: { id, title, description, date, url },
+} = Astro.props;
+
+const dateObj = new Date(date);
+const month = dateObj.toLocaleString("default", { month: "short" });
+const day = dateObj.getDate();
+const year = dateObj.getFullYear();
+---
+
+<!--
+  This component uses @tailwindcss/line-clamp
+
+  yarn add @tailwindcss/line-clamp
+  npm install @tailwindcss/line-clamp
+
+  plugins: [require('@tailwindcss/line-clamp')]
+-->
+<article
+  class="flex bg-white transition hover:shadow-xl dark:bg-gray-800 dark:shadow-gray-800/25 rounded-md"
+  id={id}>
+  <div class="rotate-180 p-2 [writing-mode:_vertical-lr]">
+    <time
+      datetime="2022-10-10"
+      class="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900 dark:text-white">
+      <span>{year}</span>
+      <span class="w-px flex-1 bg-gray-900/10 dark:bg-white/10"></span>
+      <span>{month} {day}</span>
+    </time>
+  </div>
+
+  <div class="hidden sm:block sm:basis-56">
+    <img
+      alt="Guitar"
+      src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+      class="aspect-square h-full w-full object-cover"
+    />
+  </div>
+
+  <div class="flex flex-1 flex-col justify-between">
+    <div
+      class="border-l border-gray-900/10 p-4 dark:border-white/10 sm:!border-l-transparent sm:p-6">
+      <h3 class="font-bold uppercase text-purple-900 dark:text-indigo-400">
+        {title}
+      </h3>
+
+      <p
+        class="mt-2 text-sm leading-relaxed text-gray-700 line-clamp-3 dark:text-gray-300">
+        {description}
+      </p>
+    </div>
+
+    <div class="sm:flex sm:items-end sm:justify-end">
+      <a
+        href={url}
+        class="block bg-gradient-to-bl to-violet-300 via-indigo-300 from-sky-300 dark:to-violet-500 dark:via-indigo-500 dark:from-sky-500 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 dark:text-white transition hover:animate-background hover:bg-[length:400%_400%] hover:[animation-duration:_4s] rounded-br-md">
+        Read Blog
+      </a>
+    </div>
+  </div>
+</article>

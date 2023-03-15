@@ -1,15 +1,49 @@
 ---
+import BlogCard from "../../components/BlogCard.astro";
 import Container from "../../layouts/container.astro";
 import Layout from "../../layouts/page.astro";
 const title = "Blog Posts";
 const id = "blog_posts";
+const content = [
+  {
+    id: "my-first-blog-post",
+    title: "My First Blog Post",
+    description: "This is my first blog post. I hope you like it!",
+    url: "/blog_posts/my-first-blog-post#blog_posts",
+    date: "2021-01-01",
+  },
+  {
+    id: "my-second-blog-post",
+    title: "My Second Blog Post",
+    description: "This is my second blog post. I hope you like it!",
+    url: "/blog_posts/my-second-blog-post#blog_posts",
+    date: "2021-01-02",
+  },
+  {
+    id: "my-third-blog-post#blog_posts",
+    title: "My Third Blog Post",
+    description: "This is my third blog post. I hope you like it!",
+    url: "/blog_posts/my-third-blog-post",
+    date: "2021-01-03",
+  },
+  {
+    id: "my-fourth-blog-post",
+    title: "My Fourth Blog Post",
+    description: "This is my fourth blog post. I hope you like it!",
+    url: "/blog_posts/my-fourth-blog-post#blog_posts",
+    date: "2021-01-04",
+  },
+];
 ---
 
 <Layout content={{ title, id }}>
   <Container content={{ title, id }}>
-    <ul class="list-none">
-      <li class="box">Post one</li>
-      <li class="box">Post two</li>
-    </ul>
+    <div class="flex flex-col gap-10">
+      {
+        content.map((post) => {
+          return <BlogCard content={post} />;
+        })
+      }
+    </div>
   </Container>
 </Layout>
