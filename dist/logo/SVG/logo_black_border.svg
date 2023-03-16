@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 65.17 63.36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        font-family: DevilBreezeDemi, 'Devil Breeze';
+        font-size: 48px;
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .75px;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-4" x="11.12" y="9.31" width="44.73" height="44.73" transform="translate(-11.68 40.9) rotate(-54.95)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-23.8" y1="64.79" x2="90.78" y2="-1.37" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a215ff"/>
+      <stop offset="1" stop-color="#00fbff"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="logo_with_black_border">
+      <g>
+        <g class="cls-2">
+          <rect class="cls-1" x="-21.08" y="-6.08" width="109.15" height="75.57"/>
+        </g>
+        <rect class="cls-4" x="11.12" y="9.31" width="44.73" height="44.73" transform="translate(-11.68 40.9) rotate(-54.95)"/>
+      </g>
+      <text class="cls-3" transform="translate(0 50.44)"><tspan x="0" y="0">AR</tspan></text>
+    </g>
+  </g>
+</svg>

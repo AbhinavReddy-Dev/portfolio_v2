@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68.72 67.1">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 48px;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: DevilBreezeDemi, 'Devil Breeze';
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .75px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 6.29px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="logo_skel_black_typo">
+      <rect class="cls-3" x="14.68" y="13.06" width="44.73" height="44.73" transform="translate(-13.23 45.41) rotate(-54.95)"/>
+      <g>
+        <text class="cls-1" transform="translate(3.55 54.18)"><tspan x="0" y="0">AR</tspan></text>
+        <g>
+          <rect x="-6.76" y="17.1" width="45.49" height="7.09" transform="translate(-10.1 21.84) rotate(-54.89)"/>
+          <text class="cls-2" transform="translate(5.23 39.91) rotate(-54.89) scale(.85 1)"><tspan x="0" y="0">singularity_dev</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
