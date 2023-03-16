@@ -1,18 +1,33 @@
 ---
-import Container from "./container.astro";
-import Layout from "./page.astro";
+import Blog from "../../layouts/blog.astro";
+import Container from "../../layouts/container.astro";
+import Layout from "../../layouts/page.astro";
 import type { MarkdownLayoutProps } from "astro";
 
-const id = "posts";
+export async function getStaticPaths() {
+  const posts = await Astro.glob("../posts/**/*.md");
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.frontmatter.slug,
+    },
+    props: {
+      post,
+    },
+  }));
+}
+
+const { Content } = Astro.props.post;
 
 type Props = MarkdownLayoutProps<{
   // Define frontmatter props here
   title: string;
+  id: string;
 }>;
 
 const {
-  frontmatter: { title },
-} = Astro.props;
+  frontmatter: { title, id },
+} = Content.props;
 ---
 
 <Layout content={{ title, id }}>
@@ -23,7 +38,7 @@ const {
         class="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300">
         <li>
           <a
-            href={"/posts#posts"}
+            href={"/blog_posts#blog_posts#" + id}
             class="block transition hover:text-gray-700 dark:hover:text-gray-200">
             Blog Posts
           </a>
@@ -51,6 +66,6 @@ const {
         </li>
       </ol>
     </nav>
-    <slot />
+    <Content />
   </Container>
 </Layout>

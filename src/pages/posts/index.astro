@@ -1,0 +1,32 @@
+---
+import BlogCard from "../../components/BlogCard.astro";
+import Container from "../../layouts/container.astro";
+import Layout from "../../layouts/page.astro";
+
+const title: string = "Posts";
+const id: string = "posts";
+// Get all posts
+const allPosts: any = await Astro.glob("./*.mdx");
+// Filter out draft posts
+const posts = allPosts.filter(
+  (post: any) => post?.frontmatter?.draft === false
+);
+---
+
+<Layout content={{ title, id }}>
+  <Container content={{ title, id }}>
+    <div class="flex flex-col gap-10">
+      {
+        posts.length === 0 ? (
+          <p class="mx-auto mt-20 w-fit border-2 border-blue-500 p-3 py-2 text-center text-gray-800 dark:text-gray-400">
+            No posts yet!
+          </p>
+        ) : (
+          posts.map((post: any) => {
+            return <BlogCard content={post?.frontmatter} />;
+          })
+        )
+      }
+    </div>
+  </Container>
+</Layout>

@@ -2,12 +2,17 @@
 import ProjectCard from "../components/ProjectCard.astro";
 import Container from "../layouts/container.astro";
 import Layout from "../layouts/page.astro";
+import { projects } from "../data/projects.js";
 const title = "Projects";
 const id = "projects";
 ---
 
 <Layout content={{ title, id }}>
   <Container content={{ title, id }}>
-    <ProjectCard />
+    {
+      projects.map((project) => {
+        return <ProjectCard content={project} />;
+      })
+    }
   </Container>
 </Layout>

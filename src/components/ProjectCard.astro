@@ -1,13 +1,4 @@
 ---
-const tags = [
-  "React",
-  "Redux",
-  "TypeScript",
-  "Express",
-  "Node",
-  "MongoDB",
-  "GraphQL",
-];
 const tagColors = [
   "bg-purple-200 dark:bg-blue-600",
   "bg-green-200 dark:bg-green-600",
@@ -17,6 +8,18 @@ const tagColors = [
   "bg-indigo-200 dark:bg-indigo-600",
   "bg-pink-200 dark:bg-pink-600",
 ];
+
+type Project = {
+  name: string;
+  image: string;
+  url: string;
+  description: string;
+  technologies: string[];
+  github: string;
+};
+
+const content: Project = Astro.props.content;
+const { name, image, description, technologies, url, github } = content;
 ---
 
 <!--
@@ -29,12 +32,22 @@ const tagColors = [
 -->
 <article
   class="overflow-hidden rounded-xl bg-gradient-to-tr from-violet-400 via-indigo-500 to-sky-400 bg-[length:400%_400%] p-0.5 shadow-lg hover:shadow-sm dark:shadow-gray-700/25">
-  <a href="#" class="rounded-b-[10px]">
-    <img
-      alt="Office"
-      src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-      class="h-56 w-full rounded-t-[10px] object-cover duration-150 hover:transition-all hover:duration-150"
-    />
+  <a href={url} class="rounded-b-[10px]">
+    {
+      image === "" ? (
+        <div class=" flex h-56 w-full flex-col items-center justify-center rounded-t-[10px] bg-purple-200 object-cover text-center duration-150 hover:bg-purple-100 hover:transition-all hover:duration-150 dark:bg-purple-700 hover:dark:bg-purple-800">
+          <p class=" my-auto overflow-hidden p-2 text-3xl font-medium leading-snug text-violet-400 dark:text-violet-500 sm:text-[4rem]">
+            {name}
+          </p>
+        </div>
+      ) : (
+        <img
+          alt={name}
+          src={image}
+          class="h-56 w-full rounded-t-[10px] object-cover duration-150 hover:transition-all hover:duration-150"
+        />
+      )
+    }
 
     <div class="rounded-b-[10px] bg-white p-4 dark:bg-gray-800 sm:p-6">
       <time
@@ -51,33 +64,36 @@ const tagColors = [
 
       <p
         class="mt-1 text-lg font-semibold uppercase leading-tight text-indigo-600 dark:text-indigo-400">
-        Pantry App Migration
+        {name}
       </p>
 
       <p
         class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3 dark:text-gray-400">
-        Migration of Pantry Node Application from EJS to React and MongoDB to
-        PostgreSQL with TypeScript. This is a full-stack application with a
-        React front-end and a Node/Express back-end. This a project for Software
-        Design and Maintanance course. I am currently working on this project's
-        migration of the front-end from EJS to React and the back-end from
-        MongoDB to PostgreSQL with containerization using Docker and CI with
-        GitHub Actions.
+        {description}
       </p>
-      <div class="flex gap-2 pt-4">
-        {
-          tags.map((tag, idx) => {
-            return (
-              <span
-                class={
-                  tagColors[idx] +
-                  "inline-block rounded-full px-3 py-1 font-mono text-sm font-medium text-gray-800"
-                }>
-                {tag}
-              </span>
-            );
-          })
-        }
+      <div class="mt-2 flex w-full items-center justify-between">
+        <div class="flex flex-wrap gap-2 pr-2">
+          {
+            technologies.map((tag, idx) => {
+              return (
+                <span
+                  class={
+                    tagColors[idx] +
+                    "inline-block rounded-full px-3 py-1 font-mono text-sm font-medium text-gray-800"
+                  }>
+                  {tag}
+                </span>
+              );
+            })
+          }
+        </div>
+
+        <a href={github} target="_blank" title="GitHub Link">
+          <ion-icon
+            name="logo-github"
+            class="h-8 w-8 text-black hover:scale-105 hover:cursor-pointer hover:text-sky-900 dark:text-white hover:dark:text-sky-200">
+          </ion-icon>
+        </a>
       </div>
     </div>
   </a>

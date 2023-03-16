@@ -1,9 +1,21 @@
 ---
-const {
-  content: { id, title, description, date, url },
-} = Astro.props;
+type BlogPost = {
+  title: string;
+  pubDate: string;
+  description: string;
+  url: string;
+  image: {
+    url: string;
+    alt: string;
+  };
+  author: string;
+  tags: string[];
+  layout: string;
+};
 
-const dateObj = new Date(date);
+const content: BlogPost = Astro.props?.content;
+const { title, pubDate, description, url, image } = content;
+const dateObj = new Date(pubDate);
 const month = dateObj.toLocaleString("default", { month: "short" });
 const day = dateObj.getDate();
 const year = dateObj.getFullYear();
@@ -18,8 +30,7 @@ const year = dateObj.getFullYear();
   plugins: [require('@tailwindcss/line-clamp')]
 -->
 <article
-  class="flex bg-white transition hover:shadow-xl dark:bg-gray-800 dark:shadow-gray-800/25 rounded-md"
-  id={id}>
+  class="flex rounded-md bg-white transition hover:shadow-xl dark:bg-gray-800 dark:shadow-gray-800/25">
   <div class="rotate-180 p-2 [writing-mode:_vertical-lr]">
     <time
       datetime="2022-10-10"
@@ -32,8 +43,8 @@ const year = dateObj.getFullYear();
 
   <div class="hidden sm:block sm:basis-56">
     <img
-      alt="Guitar"
-      src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+      alt={image.alt}
+      src={image.url}
       class="aspect-square h-full w-full object-cover"
     />
   </div>
@@ -54,7 +65,7 @@ const year = dateObj.getFullYear();
     <div class="sm:flex sm:items-end sm:justify-end">
       <a
         href={url}
-        class="block bg-gradient-to-bl to-violet-300 via-indigo-300 from-sky-300 dark:to-violet-500 dark:via-indigo-500 dark:from-sky-500 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 dark:text-white transition hover:animate-background hover:bg-[length:400%_400%] hover:[animation-duration:_4s] rounded-br-md">
+        class="hover:animate-background block rounded-br-md bg-gradient-to-bl from-sky-300 via-indigo-300 to-violet-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-[length:400%_400%] hover:[animation-duration:_4s] dark:from-sky-500 dark:via-indigo-500 dark:to-violet-500 dark:text-white">
         Read Blog
       </a>
     </div>
