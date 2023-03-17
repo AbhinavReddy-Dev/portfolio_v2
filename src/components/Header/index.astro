@@ -8,6 +8,54 @@ import ThemeButton from "../ThemeButton.astro";
 <nav
   class="sticky top-0 z-20 w-full border-t-4 border-r-4 border-l-4 border-black font-mono dark:border-white">
   <div
+    id="mobile-menu"
+    class="absolute -top-1 left-0 z-30 m-0 hidden h-screen w-full justify-center border-y-4 border-black bg-white/95 backdrop-blur-lg transition duration-300 ease-in-out dark:border-white dark:bg-gray-800 md:-left-[100%]">
+    <button
+      onclick="toggleMenu()"
+      type="button"
+      class="m-t-4 absolute right-5 top-4 inline-flex items-center rounded-lg bg-indigo-300 p-2 text-sm text-black focus:outline-none focus:ring-2 dark:bg-indigo-900 dark:text-white dark:focus:ring-gray-600 sm:top-5 md:order-2 md:hidden"
+      aria-controls="navbar-sticky"
+      aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      <ion-icon name="close-outline" class="h-6 w-6"></ion-icon>
+    </button>
+    <ul
+      class="m-auto flex h-[80%] w-full flex-col items-center justify-center rounded-lg text-center dark:border-gray-700 md:hidden">
+      <a href="/" class="flex items-center">
+        <div
+          class="h-12 w-12 bg-nav-bg-dark bg-cover bg-center bg-no-repeat dark:bg-nav-bg-light sm:h-14 sm:w-14">
+          <img
+            src="/logo/PNG/logo.png"
+            alt="Abhinav Reddy Logo"
+            class="h-8 w-8 opacity-0 sm:h-14 sm:w-14"
+          />
+        </div>
+      </a>
+      <a
+        href="/about_me#about_me"
+        id="about_me"
+        title="About Me"
+        class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400">
+        About Me</a
+      >
+      <a
+        href="/projects#projects"
+        id="projects"
+        title="Projects"
+        class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400"
+        >Projects</a
+      >
+      <a
+        href="/posts#posts"
+        id="posts"
+        title="Blog Posts"
+        class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400"
+        >Posts</a
+      >
+      <ThemeButton />
+    </ul>
+  </div>
+  <div
     class="mx-auto flex max-w-screen-lg flex-wrap items-center justify-between px-5 py-3 backdrop-blur-md sm:px-5">
     <a href="/" class="flex items-center pl-4">
       <div
@@ -19,7 +67,6 @@ import ThemeButton from "../ThemeButton.astro";
         />
       </div>
     </a>
-
     <button
       onclick="toggleMenu()"
       type="button"
@@ -28,68 +75,7 @@ import ThemeButton from "../ThemeButton.astro";
       aria-expanded="false">
       <span class="sr-only">Open menu</span>
       <ion-icon name="menu-outline" class="h-6 w-6"></ion-icon>
-      <!-- <svg
-        class="h-6 w-6"
-        aria-hidden="true"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        ><path
-          fill-rule="evenodd"
-          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-          clip-rule="evenodd"></path></svg
-      > -->
     </button>
-
-    <div
-      id="mobile-menu"
-      class="absolute -top-1 left-0 z-30 m-0 hidden h-screen w-full justify-center border-y-4 border-black bg-white/95 backdrop-blur-lg transition duration-300 ease-in-out dark:border-white dark:bg-gray-800 md:-left-[100%]">
-      <button
-        onclick="toggleMenu()"
-        type="button"
-        class="m-t-4 absolute right-5 top-4 inline-flex items-center rounded-lg bg-indigo-300 p-2 text-sm text-black focus:outline-none focus:ring-2 dark:bg-indigo-900 dark:text-white dark:focus:ring-gray-600 sm:top-5 md:order-2 md:hidden"
-        aria-controls="navbar-sticky"
-        aria-expanded="false">
-        <span class="sr-only">Open menu</span>
-        <ion-icon name="close-outline" class="h-6 w-6"></ion-icon>
-      </button>
-      <ul
-        class="m-auto flex h-[80%] w-full flex-col items-center justify-center rounded-lg text-center dark:border-gray-700">
-        <a href="/" class="flex items-center">
-          <div
-            class="h-12 w-12 bg-nav-bg-dark bg-cover bg-center bg-no-repeat dark:bg-nav-bg-light sm:h-14 sm:w-14">
-            <img
-              src="/logo/PNG/logo.png"
-              alt="Abhinav Reddy Logo"
-              class="h-8 w-8 opacity-0 sm:h-14 sm:w-14"
-            />
-          </div>
-        </a>
-        <a
-          href="/about_me#about_me"
-          id="about_me"
-          title="About Me"
-          class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400">
-          About Me</a
-        >
-        <a
-          href="/projects#projects"
-          id="projects"
-          title="Projects"
-          class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400"
-          >Projects</a
-        >
-        <a
-          href="/posts#posts"
-          id="posts"
-          title="Blog Posts"
-          class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400"
-          >Posts</a
-        >
-        <ThemeButton />
-      </ul>
-    </div>
-
     <div
       class="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
       id="navbar-sticky">
