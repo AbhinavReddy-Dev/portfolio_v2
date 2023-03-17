@@ -16,10 +16,11 @@ type Project = {
   description: string;
   technologies: string[];
   github: string;
+  date: string;
 };
 
 const content: Project = Astro.props.content;
-const { name, image, description, technologies, url, github } = content;
+const { name, image, description, technologies, url, github, date } = content;
 ---
 
 <!--
@@ -36,7 +37,7 @@ const { name, image, description, technologies, url, github } = content;
     {
       image === "" ? (
         <div class=" flex h-56 w-full flex-col items-center justify-center rounded-t-[10px] bg-purple-200 object-cover text-center duration-150 hover:bg-purple-100 hover:transition-all hover:duration-150 dark:bg-purple-700 hover:dark:bg-purple-800">
-          <p class=" my-auto overflow-hidden p-2 text-3xl font-medium leading-snug text-violet-400 dark:text-violet-500 sm:text-[4rem]">
+          <p class=" my-auto overflow-hidden p-2 text-[3rem] font-extrabold leading-snug text-violet-400 dark:text-violet-500 sm:text-[4rem] md:text-violet-300">
             {name}
           </p>
         </div>
@@ -54,7 +55,7 @@ const { name, image, description, technologies, url, github } = content;
         datetime="2022-10-10"
         class="block text-xs text-gray-500 dark:text-gray-400">
         {
-          new Date().toLocaleDateString("en-US", {
+          new Date(date).toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
             day: "numeric",
@@ -63,7 +64,7 @@ const { name, image, description, technologies, url, github } = content;
       </time>
 
       <p
-        class="mt-1 text-lg font-semibold uppercase leading-tight text-indigo-600 dark:text-indigo-400">
+        class="mt-1 text-lg font-semibold uppercase leading-tight text-indigo-600 underline dark:text-indigo-400 md:no-underline">
         {name}
       </p>
 
