@@ -8,56 +8,8 @@ import ThemeButton from "../ThemeButton.astro";
 <nav
   class="sticky top-0 z-20 w-full border-t-4 border-r-4 border-l-4 border-black font-mono dark:border-white">
   <div
-    id="mobile-menu"
-    class="absolute -top-1 left-0 z-30 m-0 hidden h-screen w-full justify-center border-y-4 border-black bg-white/95 backdrop-blur-lg transition duration-300 ease-in-out dark:border-white dark:bg-gray-800 md:-left-[100%]">
-    <button
-      onclick="toggleMenu()"
-      type="button"
-      class="m-t-4 absolute right-5 top-4 inline-flex items-center rounded-lg bg-indigo-300 p-2 text-sm text-black focus:outline-none focus:ring-2 dark:bg-indigo-900 dark:text-white dark:focus:ring-gray-600 sm:top-5 md:order-2 md:hidden"
-      aria-controls="navbar-sticky"
-      aria-expanded="false">
-      <span class="sr-only">Open menu</span>
-      <ion-icon name="close-outline" class="h-6 w-6"></ion-icon>
-    </button>
-    <ul
-      class="m-auto flex h-[80%] w-full flex-col items-center justify-center rounded-lg text-center dark:border-gray-700 md:hidden">
-      <a href="/" class="flex items-center">
-        <div
-          class="h-12 w-12 bg-nav-bg-dark bg-cover bg-center bg-no-repeat dark:bg-nav-bg-light sm:h-14 sm:w-14">
-          <img
-            src="/logo/PNG/logo.png"
-            alt="Abhinav Reddy Logo"
-            class="h-8 w-8 opacity-0 sm:h-14 sm:w-14"
-          />
-        </div>
-      </a>
-      <a
-        href="/about_me#about_me"
-        id="about_me"
-        title="About Me"
-        class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400">
-        About Me</a
-      >
-      <a
-        href="/projects#projects"
-        id="projects"
-        title="Projects"
-        class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400"
-        >Projects</a
-      >
-      <a
-        href="/posts#posts"
-        id="posts"
-        title="Blog Posts"
-        class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400"
-        >Posts</a
-      >
-      <ThemeButton />
-    </ul>
-  </div>
-  <div
     class="mx-auto flex max-w-screen-lg flex-wrap items-center justify-between px-5 py-3 backdrop-blur-md sm:px-5">
-    <a href="/" class="flex items-center pl-4">
+    <a href="/" class="ml-2 mt-1 flex items-center">
       <div
         class="h-12 w-12 bg-nav-bg-dark bg-cover bg-center bg-no-repeat dark:bg-nav-bg-light sm:h-14 sm:w-14">
         <img
@@ -70,7 +22,7 @@ import ThemeButton from "../ThemeButton.astro";
     <button
       onclick="toggleMenu()"
       type="button"
-      class="inline-flex items-center rounded-lg bg-indigo-300 p-2 text-sm text-black focus:outline-none focus:ring-2 dark:bg-indigo-900 dark:text-white dark:focus:ring-gray-600 md:order-2 md:hidden"
+      class="m-2 inline-flex items-center rounded-lg bg-indigo-300 p-2 text-sm text-black focus:outline-none focus:ring-2 dark:bg-indigo-900 dark:text-white dark:focus:ring-gray-600 md:order-2 md:hidden"
       aria-controls="navbar-sticky"
       aria-expanded="false">
       <span class="sr-only">Open menu</span>
@@ -106,8 +58,55 @@ import ThemeButton from "../ThemeButton.astro";
       </ul>
     </div>
   </div>
+  <div
+    id="mobile-menu"
+    class="absolute -top-1 left-0 z-30 m-0 hidden h-screen w-full justify-center border-y-4 border-black bg-white/95 backdrop-blur-lg transition duration-300 ease-in-out dark:border-white dark:bg-gray-800 md:-left-[100%]">
+    <a href="/" class="ml-2 mt-1 flex items-center">
+      <div
+        class="absolute left-7 top-5 h-12 w-12 bg-nav-bg-dark bg-cover bg-center bg-no-repeat dark:bg-nav-bg-light sm:h-14 sm:w-14">
+        <img
+          src="/logo/PNG/logo.png"
+          alt="Abhinav Reddy Logo"
+          class="h-8 w-8 opacity-0 sm:h-14 sm:w-14"
+        />
+      </div>
+    </a>
+    <button
+      onclick="toggleMenu()"
+      type="button"
+      class="absolute right-7 top-5 inline-flex items-center rounded-lg bg-indigo-300 p-2 text-sm text-black focus:outline-none focus:ring-2 dark:bg-indigo-900 dark:text-white dark:focus:ring-gray-600 sm:top-5 md:order-2 md:hidden"
+      aria-controls="navbar-sticky"
+      aria-expanded="false">
+      <span class="sr-only">Open menu</span>
+      <ion-icon name="close-outline" class="h-6 w-6"></ion-icon>
+    </button>
+    <ul
+      class="m-auto flex h-[80%] w-full flex-col items-center justify-center rounded-lg text-center dark:border-gray-700 md:hidden">
+      <a
+        href="/about_me#about_me"
+        id="about_me"
+        title="About Me"
+        class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400">
+        About Me</a
+      >
+      <a
+        href="/projects#projects"
+        id="projects"
+        title="Projects"
+        class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400"
+        >Projects</a
+      >
+      <a
+        href="/posts#posts"
+        id="posts"
+        title="Blog Posts"
+        class="my-auto block h-fit border-2 border-transparent px-2 py-1 text-black target:border-2 target:border-black hover:border-b-2 hover:border-violet-600 focus:outline-none dark:text-white target:dark:border-white hover:dark:border-violet-400"
+        >Posts</a
+      >
+      <ThemeButton />
+    </ul>
+  </div>
 </nav>
-
 <script is:inline>
   function toggleMenu() {
     const mobileMenu = document.getElementById("mobile-menu");
