@@ -12,10 +12,12 @@ const id = "abhinav-reddy";
       class="min-h-100 my-auto flex flex-col gap-5 md:grid md:grid-cols-3 md:grid-rows-2 md:gap-10">
       <div
         class="order-2 col-start-1 row-start-2 my-auto flex flex-col gap-4 text-center md:order-1 md:col-span-2 md:row-start-1 md:text-left">
-        <p class="font-mono text-sm text-indigo-800 dark:text-sky-200">
+        <p class="text-md font-mono text-purple-900 dark:text-lime-100">
           Hi, I'm
         </p>
         <h2
+          data-value={title}
+          id="title"
           class="font-mono text-2xl font-semibold tracking-wide underline dark:text-white sm:text-4xl">
           {title}
         </h2>
@@ -77,3 +79,33 @@ const id = "abhinav-reddy";
     </div>
   </Container>
 </Layout>
+
+<script is:inline>
+  const letters = "AbcdefghijklmnopqRstuvwxyz";
+
+  let interval = null;
+
+  document.getElementById("title").onmouseover = (event) => {
+    let iteration = 0;
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+      event.target.innerText = event.target.innerText
+        .split("")
+        .map((letter, index) => {
+          if (index < iteration) {
+            return event.target.dataset.value[index];
+          }
+
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if (iteration >= event.target.dataset.value.length) {
+        clearInterval(interval);
+      }
+
+      iteration += 1 / 3;
+    }, 30);
+  };
+</script>
