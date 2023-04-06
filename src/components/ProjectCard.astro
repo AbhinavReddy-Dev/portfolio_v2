@@ -56,11 +56,17 @@ const { name, image, description, technologies, url, github, date } = content;
       datetime="2022-10-10"
       class="block text-xs text-gray-500 dark:text-gray-400">
       {
-        new Date(date).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })
+        date === undefined
+          ? new Date().toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          : new Date(date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
       }
     </time>
     <a href={url} target="_blank" class="">

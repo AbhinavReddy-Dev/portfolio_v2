@@ -25,5 +25,6 @@ export const projects = [
       "GitHub Actions",
       "Docker",
     ],
+    date: "02-16-2023",
   },
 ];
