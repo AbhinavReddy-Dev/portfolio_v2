@@ -10,4 +10,20 @@ export const projects = [
     technologies: ["HTML", "CSS", "TypeScript", "Astro"],
     date: "03-16-2023",
   },
+  {
+    id: 2,
+    name: "Pantry Node",
+    description:
+      " A project migration from a EJS, Node, Express, MongoDB stack to a React, Node, Express, PostgreSQL stack. This project is a pantry management app that allows users to add, edit, and delete items from the food pantry. I am working on React with TpeScript and CI/CD of the project.",
+    url: "https://github.com/ChicoState/PantryNode",
+    github: "https://github.com/ChicoState/PantryNode",
+    image: "",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Material-UI",
+      "GitHub Actions",
+      "Docker",
+    ],
+  },
 ];
