@@ -1,6 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
-import Header from "../components/Header/index.astro";
+import NavigationBar from "../components/NavigationBar/index.astro";
 const { content } = Astro.props;
 ---
 
@@ -31,7 +31,7 @@ const { content } = Astro.props;
     <!-- <div
       class="fixed left-0 bottom-0 z-20 w-screen border-4 border-b-0 border-black dark:border-white">
     </div> -->
-    <Header />
+    <NavigationBar />
     <slot />
     <Footer />
   </body>

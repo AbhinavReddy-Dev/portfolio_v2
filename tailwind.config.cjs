@@ -200,5 +200,6 @@ module.exports = {
     require("tailwindcss"),
     require("autoprefixer"),
     require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/typography"),
   ],
 };

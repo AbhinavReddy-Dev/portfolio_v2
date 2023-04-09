@@ -20,7 +20,7 @@ const {
     <nav aria-label="Breadcrumb" class="mb-5">
       <ol
         role="list"
-        class="flex items-center gap-1 text-xs text-gray-600 dark:text-gray-400">
+        class="my-5 flex items-center gap-1 text-xs text-gray-600 dark:text-gray-400">
         <li>
           <a
             href={"/posts#posts"}
@@ -51,6 +51,8 @@ const {
         </li>
       </ol>
     </nav>
-    <slot />
+    <article class="prose dark:prose-invert md:prose-lg lg:prose-xl">
+      <slot />
+    </article>
   </Container>
 </Layout>

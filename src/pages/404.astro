@@ -1,0 +1,19 @@
+---
+import Container from "../layouts/container.astro";
+import Layout from "../layouts/page.astro";
+
+const location = Astro.url.pathname;
+---
+
+<Layout content={{ title: "", id: "" }}>
+  <Container content={{ title: "", id: "" }}>
+    <article class="flex flex-col justify-center text-center">
+      <h1 class="mb-10 font-devil text-3xl font-bold">404</h1>
+      <p class="text-sm text-gray-700 dark:text-gray-300">
+        The page <span class="font-mono text-lg text-black dark:text-white"
+          >{location}</span
+        > is not available
+      </p>
+    </article>
+  </Container>
+</Layout>

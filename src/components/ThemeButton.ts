@@ -25,7 +25,7 @@ const set_dark_theme = () => {
 
 const set_light_theme = () => {
   light_theme?.forEach((e) => {
-    e.classList.add("bg-violet-400");
+    e.classList.add("bg-violet-300");
   });
   dark_theme?.forEach((e) => {
     e.classList.remove("bg-blue-300");
