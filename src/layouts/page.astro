@@ -23,13 +23,18 @@ const { content } = Astro.props;
   </head>
   <!-- bg-gradient-to-bl to-violet-300 via-indigo-300 from-sky-300 dark:to-violet-900 dark:via-indigo-900 dark:from-sky-900 -->
   <body
-    class="relative transform-none bg-gradient-to-bl from-sky-50 via-sky-50 to-sky-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900">
+    class="relative transform-none overflow-auto bg-gradient-to-bl from-sky-50 via-sky-50 to-sky-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900">
     <div
-      class="absolute top-56 left-0 h-96 w-96 rotate-45 animate-bg-animation rounded-lg bg-gradient-to-tl from-sky-200 via-indigo-200 to-violet-200 dark:from-sky-900 dark:via-indigo-900 dark:to-violet-900 md:top-10 md:left-28 lg:left-[25%]">
+      class="fixed top-0 left-0 h-56 w-56 rotate-45 rounded-full bg-violet-300 shadow-2xl shadow-violet-300 dark:bg-violet-800 dark:shadow-violet-800 md:left-16 md:top-36 lg:left-[18%] xl:left-[30%]">
     </div>
-
+    <div
+      class="fixed top-[40%] right-0 h-56 w-56 rotate-45 rounded-full bg-sky-300 shadow-2xl shadow-sky-300 dark:bg-sky-700 dark:shadow-sky-700 md:right-28 lg:right-[21%] xl:right-[30%]">
+    </div>
+    <div
+      class="fixed bottom-[10%] left-0 h-56 w-56 rotate-45 rounded-full bg-indigo-300 shadow-2xl shadow-indigo-300 dark:bg-indigo-800 dark:shadow-indigo-800 md:left-28 lg:left-[21%] xl:left-[35%]">
+    </div>
     <NavigationBar />
-    <div class="backdrop-blur-3xl">
+    <div class="bg-white/20 backdrop-blur-3xl dark:bg-black/20">
       <slot />
       <Footer />
     </div>
