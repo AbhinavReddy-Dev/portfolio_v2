@@ -24,15 +24,14 @@ const { content } = Astro.props;
   <!-- bg-gradient-to-bl to-violet-300 via-indigo-300 from-sky-300 dark:to-violet-900 dark:via-indigo-900 dark:from-sky-900 -->
   <body
     class="relative min-h-screen transform-none bg-gradient-to-bl from-sky-50 via-sky-50 to-sky-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900">
-    <!-- border-4 border-t-0 border-black dark:border-white -->
-    <!-- <div
-      class="fixed -z-20 h-screen w-screen border-4 border-b-0 border-black dark:border-white">
-    </div> -->
-    <!-- <div
-      class="fixed left-0 bottom-0 z-20 w-screen border-4 border-b-0 border-black dark:border-white">
-    </div> -->
+    <div
+      class="absolute top-10 left-10 h-96 w-96 rotate-45 animate-bg-animation bg-gradient-to-tl from-sky-200 via-indigo-200 to-violet-200 dark:from-sky-900 dark:via-indigo-900 dark:to-violet-900 lg:left-52">
+    </div>
+
     <NavigationBar />
-    <slot />
-    <Footer />
+    <div class="backdrop-blur-3xl">
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>
