@@ -1,0 +1,71 @@
+---
+interface Experience {
+  title: string;
+  company: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  companyLink: string;
+  skills: string[];
+}
+
+interface Props {
+  experience: Experience;
+}
+
+const experience: Experience = Astro.props.experience;
+
+function calculateYearsOfExperience(
+  startDate: string,
+  endDate: string
+): number {
+  const start = new Date(Date.parse(startDate));
+  const end = new Date(Date.parse(endDate));
+  const diffInMs = end.getTime() - start.getTime();
+  const diffInYears = diffInMs / (1000 * 60 * 60 * 24 * 365);
+  return Math.floor(diffInYears);
+}
+
+const yearsOfExperience = calculateYearsOfExperience(
+  experience.startDate,
+  experience.endDate
+);
+---
+
+<div
+  class="my-8 flex w-full flex-col gap-1 overflow-hidden font-mono sm:flex-row">
+  <div class="flex flex-row justify-between sm:flex-col-reverse">
+    <p class="text-xs sm:rotate-[270deg]">
+      {experience.startDate}
+    </p>
+    <p class="text-xs sm:rotate-[270deg]">
+      {experience.endDate}
+    </p>
+  </div>
+  <div
+    class="border-t border-gray-400 py-2 dark:border-gray-500 sm:border-l sm:border-t-0 sm:pl-3">
+    <div class="text-xl font-bold tracking-tight">{experience.title}</div>
+    <div class="my-2">
+      <a
+        href={experience.companyLink}
+        class="tracking-tight text-blue-500 hover:text-blue-700 dark:text-blue-400 hover:dark:text-blue-200">
+        {experience.company}
+      </a>
+    </div>
+    <p
+      class="text-sm leading-7 tracking-tight text-gray-700 dark:text-gray-300">
+      {experience.description}
+    </p>
+
+    <div class="mt-4 flex flex-wrap">
+      {
+        experience.skills.map((skill) => (
+          <span
+            class={`mr-2 mb-2 rounded-full bg-gray-200/40 px-2 py-1 text-xs text-gray-800 backdrop-blur-sm dark:bg-indigo-900/50 dark:text-gray-200`}>
+            {skill}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</div>

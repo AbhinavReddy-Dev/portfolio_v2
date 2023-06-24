@@ -58,8 +58,21 @@ module.exports = {
         "text-appear": "text-appear 1s forwards ease-in-out",
         "text-disappear": "text-disappear 1s forwards ease-in-out",
         "bg-animation": "bg-animation 5s infinite ease",
+        "slide-up-fade-in": "slide-up-fade-in 0.5s ease-out forwards",
+        "slide-up-fade-in-1": "slide-up-fade-in 1s ease-out forwards",
+        "slide-up-fade-in-1.5": "slide-up-fade-in 1.5s ease-out forwards",
       },
       keyframes: {
+        "slide-up-fade-in": {
+          "0%": {
+            opacity: 0,
+            transform: "translateY(20px)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+        },
         //background gradient animation
         "bg-animation": {
           "0%": { backgroundSize: "500%", backgroundPosition: "0% 0%" },
