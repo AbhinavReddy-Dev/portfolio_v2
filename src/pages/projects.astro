@@ -9,6 +9,24 @@ const id = "projects";
 
 <Layout content={{ title, id }}>
   <Container content={{ title, id }}>
+    <div
+      class="my-5 flex items-center justify-center rounded-md border p-2 text-center font-mono tracking-tight dark:border-gray-400">
+      <h2
+        class="items-center text-gray-800 dark:text-gray-300"
+        style="text-wrap: balance">
+        For more current projects please visit my GitHub profile
+      </h2>
+      <a
+        href="https://github.com/AbhinavReddy-Dev"
+        target="_blank"
+        title="GitHub Link"
+        class="ml-2">
+        <ion-icon
+          name="logo-github"
+          class="h-10 w-10 animate-slide-up-fade-in-1 pt-2 text-black hover:scale-105 hover:cursor-pointer hover:text-sky-900 dark:text-white hover:dark:text-sky-200">
+        </ion-icon>
+      </a>
+    </div>
     {
       projects.map((project) => {
         return <ProjectCard content={project} />;
