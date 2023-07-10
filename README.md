@@ -9,3 +9,9 @@ To run locally,
 
 - Run application
   `yarn dev`
+
+<!-- TODO
+1. Add contact me page
+2. Update Projects card
+3. Add blog page
+-->
