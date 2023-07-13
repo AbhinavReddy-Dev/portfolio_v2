@@ -7,7 +7,7 @@ const id = "abhinav-reddy";
 ---
 
 <Layout content={{ title, id }}>
-  <Container content={{ title: "", id }}>
+  <Container content={{ title: null, id, showTitle: false }}>
     <div
       class="min-h-100 my-auto flex flex-col gap-5 md:grid md:grid-cols-3 md:grid-rows-2 md:gap-10">
       <div
@@ -22,11 +22,11 @@ const id = "abhinav-reddy";
           {title}
         </h2>
         <p class="font-mono text-black dark:text-white">
-          A Full-Stack Developer, I like to build user centric websites and
-          mobile applications. I'm currently pursuing masters in Computer
-          Science at the California State University, Chico. In my freetime I
-          experiement with new technologies, learn best practices and contribute
-          to open source code.
+          A masters graduate, full-stack developer and an avid ML enthusiast, I
+          like to build user centric websites, mobile applications and juggle
+          with data and models whenever possible. In my freetime I experiement
+          with new technologies, learn best practices and contribute to open
+          source code.
         </p>
         <div
           class="my-5 flex w-full flex-wrap justify-center gap-6 gap-y-5 md:justify-start lg:gap-x-10">
