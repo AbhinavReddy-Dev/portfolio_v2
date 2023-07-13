@@ -44,6 +44,26 @@ export const experience = [
     ],
   },
   {
+    title: "Head of Frontend Development",
+    company: "Slill-Ex",
+    startDate: "Apr 2021",
+    endDate: "Dec 2022",
+    description:
+      "Designed and developed the complete frontend for the initial prototype using GatsbyJS (React), managed application state using Redux. Fine tuned the flow for easy user onboarding and prioritized user experience with user centric design for a complex UI. Used React-Flow for visualizing the mapping of skills to job roles, provided active feedback to user actions. Integrated REST APIs with complex JSON response data forms and intelligently processed and displayed information wherever necessary. Wrote substantial unit tests for every component and achieved maximum coverage. Regularly hosted stakeholder meetings for frontend updates and encouraged critical feedback for improvements in UI/UX",
+    companyLink: "#",
+    skills: [
+      "HTML",
+      "CSS",
+      "TailwindCSS",
+      "JavaScript",
+      "TypeScript",
+      "GatsbyJS",
+      "React-Flow",
+      "Redux",
+      "Jest",
+    ],
+  },
+  {
     title: "Full Stack Developer",
     company: "Zyppys and Doctorite",
     startDate: "Jul 2019",

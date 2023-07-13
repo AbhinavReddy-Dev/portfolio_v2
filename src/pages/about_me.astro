@@ -2,7 +2,6 @@
 import ExpCard from "../components/ExpCard.astro";
 import Container from "../layouts/container.astro";
 import Layout from "../layouts/page.astro";
-
 import { experience } from "../data/experience";
 
 const title = "About Me";
@@ -11,27 +10,47 @@ const id = "about_me";
 
 <Layout content={{ title, id }}>
   <Container content={{ title, id }}>
-    <p class="font-mono font-thin text-gray-700 dark:text-gray-300">
-      I'm Abhinav Merugu, a Full Stack Developer with a passion for web and
-      mobile application development.
-    </p>
-    <p class="mt-4 font-mono font-thin text-gray-700 dark:text-gray-300">
-      My expertise lies in web development, where I have strong knowledge of
-      React, TypeScript, JavaScript, C++, Python, Redux, GatsbyJS, NextJS,
-      Django, REST APIs, ExpressJS, Astro, Jest unit testing, and more. I'm also
-      experienced in mobile application development using React Native and have
-      knowledge in Machine Learning.
-    </p>
-    <p class="mt-4 font-mono font-thin text-gray-700 dark:text-gray-300">
-      My attention to detail and focus on UX and UI design are integral to my
-      work, and I strive to create products that are both beautiful and
-      functional. I'm a quick learner, adaptable, and am always looking for
-      opportunities to grow and improve my skill set. I have earned over 6
-      certifications from Interaction Design Foundation, which highlights my
-      dedication to learning and staying on top of the latest industry trends.
-    </p>
+    <section class="text-sm">
+      <p class="font-mono font-thin text-gray-700 dark:text-gray-300">
+        I'm Abhinav Merugu, a Full Stack Developer with a passion for Data
+        Science and Artificial Intlligence.
+      </p>
 
-    <div class="mb-5 w-full">
+      <div id="extra-info" class="hidden">
+        <p class="mt-4 font-mono font-thin text-gray-700 dark:text-gray-300">
+          My expertise lies in web development, where I have strong knowledge of
+          React, TypeScript, JavaScript, C++, Python, Redux, GatsbyJS, NextJS,
+          Django, REST APIs, ExpressJS, Astro, Jest unit testing, and more. I'm
+          also experienced in mobile application development using React Native
+          and have academic practical experience in Machine Learning, I
+          processed data and trained different prediction models on global
+          weather and sea level rise.
+        </p>
+        <p class="mt-4 font-mono font-thin text-gray-700 dark:text-gray-300">
+          My attention to detail and focus on UX and UI design are integral to
+          my work, and I strive to create products that are both beautiful and
+          functional. I'm a quick learner, adaptable, and am always looking for
+          opportunities to grow and improve my skill set. I have earned over 6
+          certifications from Interaction Design Foundation, which highlights my
+          dedication to learning and staying on top of the latest industry
+          trends.
+        </p>
+        <p class="mt-4 font-mono font-thin text-gray-700 dark:text-gray-300">
+          My interest in Data Science, Machine Learning, and Artificial
+          Intelligence stems from my desire to solve real-world problems using
+          technology. I have completed several courses on Data Science and
+          Machine Learning, and I am curious to explore the realm of NLPs, LLMs,
+          vector data structures, and more.
+        </p>
+      </div>
+    </section>
+    <button
+      id="show-more"
+      class="mt-5 rounded-md bg-indigo-400 px-3 py-1 text-xs text-indigo-50 hover:cursor-pointer hover:opacity-80 dark:bg-indigo-700"
+      onclick="toggleShowMore">
+      Read more</button
+    >
+    <div class="mb-20 w-full">
       <h2
         class="mt-10 mb-5 font-roboto text-xl font-bold text-gray-900 dark:text-gray-300">
         Experience
@@ -59,3 +78,20 @@ const id = "about_me";
     </div> -->
   </Container>
 </Layout>
+
+<script>
+  const showMore = document.getElementById("show-more");
+  const extraInfo = document.getElementById("extra-info");
+
+  showMore.addEventListener("click", toggleShowMore);
+
+  function toggleShowMore() {
+    if (extraInfo.classList.contains("hidden")) {
+      extraInfo.classList.remove("hidden");
+      showMore.innerHTML = "Read less";
+    } else {
+      extraInfo.classList.add("hidden");
+      showMore.innerHTML = "Read more";
+    }
+  }
+</script>
