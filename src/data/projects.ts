@@ -5,7 +5,7 @@ export const projects = [
       "A weather app that allows users to search for a city and get the current weather and a 3 day forecast. User can also save the favourite cities and this also allows for current location when the browser supports.",
     url: "http://18.208.145.36:5173",
     github: "https://github.com/AbhinavReddy-Dev/weatherapp",
-    image: "public/projects/weatherapp.png",
+    image: "/projects/weatherapp.png",
     technologies: [
       "HTML",
       "CSS",
