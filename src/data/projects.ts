@@ -14,6 +14,8 @@ export const projects = [
       "NodeJS",
       "ExpressJS",
       "MongoDB",
+      "Docker",
+      "AWS EC2",
     ],
     date: "07-12-2023",
   },
@@ -24,7 +26,14 @@ export const projects = [
     url: "https://frontendwizard.netlify.app/",
     github: "https://github.com/AbhinavReddy-Dev/frontendmentor",
     image: "",
-    technologies: ["HTML", "CSS", "TypeScript", "Astro"],
+    technologies: [
+      "HTML",
+      "CSS",
+      "TailwindCSS",
+      "JavaScript",
+      "TypeScript",
+      "Astro",
+    ],
     date: "03-16-2023",
   },
   {
@@ -35,6 +44,7 @@ export const projects = [
     github: "https://github.com/ChicoState/PantryNode",
     image: "",
     technologies: [
+      "UI Design",
       "React",
       "TypeScript",
       "Material-UI",
