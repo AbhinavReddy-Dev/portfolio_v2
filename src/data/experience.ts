@@ -69,7 +69,7 @@ export const experience = [
     startDate: "Jul 2019",
     endDate: "Jul 2021",
     description:
-      "Designed and developed 2 web application dashboards and features for 2 multi-platform mobile applications. Built new REST APIs as required for both dashboards and features on mobile applications. Wrote unit tests for all the features and components. Implemented/ maintained complete CI/CD for all products using Docker, AWS, and Git.",
+      "Designed and developed 2 web application dashboards and various critical features for 2 multi-platform mobile applications. Built new REST APIs as required for both dashboards and features on mobile applications. Wrote unit tests for all the features and components. Implemented/ maintained complete CI/CD for all products using Docker, AWS, and Git.",
     companyLink: "https://www.doctorite.co/",
     skills: [
       "HTML",

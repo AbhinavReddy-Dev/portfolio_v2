@@ -39,7 +39,7 @@ export const projects = [
   {
     name: "Pantry Node",
     description:
-      "A project migration from a EJS, Node, Express, MongoDB stack to a React, Node, Express, PostgreSQL stack. This is a pantry management app that allows users to add, edit, and delete items from the food pantry. I am working on React with TpeScript and CI/CD of the project, I also perform code reviews and do pair programming with others.",
+      "A project migration from a EJS, Node, Express, MongoDB stack to a React, Node, Express, PostgreSQL stack. This is a pantry management app that allows admins to add, edit, and delete items, and donors from the food pantry. I worked on React with TypeScript, set up the dev environment, state management, page layout and CI/CD for frontend, I performed several code reviews and done pair programming with others.",
     url: "https://github.com/ChicoState/PantryNode",
     github: "https://github.com/ChicoState/PantryNode",
     image: "",
