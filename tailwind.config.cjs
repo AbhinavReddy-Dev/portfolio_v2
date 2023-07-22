@@ -66,10 +66,12 @@ module.exports = {
         "slide-up-fade-in": {
           "0%": {
             opacity: 0,
+            blur: "10px",
             transform: "translateY(20px)",
           },
           "100%": {
             opacity: 1,
+            blur: "0px",
             transform: "translateY(0)",
           },
         },

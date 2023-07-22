@@ -32,8 +32,28 @@ const yearsOfExperience = calculateYearsOfExperience(
 );
 ---
 
+<style>
+  .obs-animate-off {
+    opacity: 0;
+    transform: translateX(1rem);
+    transition: all 1s;
+  }
+
+  .obs-animate-on {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .obs-animate-off {
+      transition: none;
+    }
+  }
+</style>
+
 <div
-  class="my-8 flex w-full flex-col gap-1 overflow-hidden font-mono sm:flex-row">
+  class="obs-animate-off my-10 flex w-full flex-col gap-1 overflow-hidden font-mono sm:flex-row">
   <div class="flex flex-row justify-between sm:flex-col-reverse">
     <p class="text-xs sm:rotate-[270deg]">
       {experience.startDate}
@@ -53,7 +73,7 @@ const yearsOfExperience = calculateYearsOfExperience(
       </a>
     </div>
     <p
-      class="text-sm leading-7 tracking-tight text-gray-700 dark:text-gray-300">
+      class="text-sm leading-6 tracking-tight text-gray-700 dark:text-gray-300">
       {experience.description}
     </p>
 
@@ -69,3 +89,24 @@ const yearsOfExperience = calculateYearsOfExperience(
     </div>
   </div>
 </div>
+
+<script>
+  // intersection observer to animate on scroll for obs-animate-off class elements
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("obs-animate-off");
+        entry.target.classList.add("obs-animate-on");
+      }
+      // else {
+      //   entry.target.classList.remove("obs-animate-on");
+      //   entry.target.classList.add("obs-animate-off");
+      // }
+    });
+  });
+
+  const elements = document.querySelectorAll(".obs-animate-off");
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
+</script>

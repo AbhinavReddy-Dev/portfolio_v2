@@ -25,7 +25,7 @@ export const projects = [
       "A collection of challenges from Frontend Mentor to practice my skills. I'm using this as a way to learn new technologies and improve my frontend skills, I will be adding more projects as I complete them.",
     url: "https://frontendwizard.netlify.app/",
     github: "https://github.com/AbhinavReddy-Dev/frontendmentor",
-    image: "",
+    image: "/projects/frontend-mentor.png",
     technologies: [
       "HTML",
       "CSS",
@@ -42,7 +42,7 @@ export const projects = [
       "A project migration from a EJS, Node, Express, MongoDB stack to a React, Node, Express, PostgreSQL stack. This is a pantry management app that allows admins to add, edit, and delete items, and donors from the food pantry. I worked on React with TypeScript, set up the dev environment, state management, page layout and CI/CD for frontend, I performed several code reviews and done pair programming with others.",
     url: "https://github.com/ChicoState/PantryNode",
     github: "https://github.com/ChicoState/PantryNode",
-    image: "",
+    image: "/projects/pantrynode.png",
     technologies: [
       "UI Design",
       "React",
