@@ -1,5 +1,15 @@
 export const experience = [
   {
+    title: "Technology Consultant",
+    company: "StackNexus Inc.",
+    startDate: "Aug 2023",
+    endDate: "Now",
+    description:
+      "As a technology consultant I am responsible for providing the best possible solutions to the clients. I work on a variety of technologies such ranging from UI to Machine Learning.",
+    companyLink: "https://www.stacknexus.io/",
+    skills: ["SalesForce", "UI Design", "Machine Learning"],
+  },
+  {
     title: "Masters in Computer Science",
     company: "California State University, Chico",
     startDate: "Aug 2021",
