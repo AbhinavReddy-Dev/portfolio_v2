@@ -6,7 +6,7 @@ import Layout from "../../layouts/page.astro";
 const title: string = "Posts";
 const id: string = "posts";
 // Get all posts
-const allPosts: any = await Astro.glob("./*.mdx");
+const allPosts: any = await Astro.glob("./*.md");
 // Filter out draft posts
 const posts = allPosts.filter(
   (post: any) => post?.frontmatter?.draft === false

@@ -1,0 +1,90 @@
+---
+import Container from "../layouts/container.astro";
+import Layout from "../layouts/page.astro";
+import { icons } from "../data/icons";
+const title = "Happy Birthday 💛";
+const id = "happy-birthday-💛";
+const noNavBar = true;
+---
+
+<Layout content={{ title, id, noNavBar }}>
+  <Container content={{ title: null, id, showTitle: false }}>
+    <div class="code-div my-20 hidden min-h-fit flex-col justify-center gap-5">
+      <div
+        class="mx-auto grid w-11/12 grid-cols-3 gap-10 md:max-w-xl md:gap-20">
+        {
+          icons.map((icon) => (
+            <img
+              class="icon m-auto rounded-lg border-4 border-pink-300 p-6 hover:cursor-pointer hover:bg-pink-800"
+              src={icon.url}
+              alt={icon.name}
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    <div
+      class="modal absolute top-0 left-0 z-10 flex h-fit w-screen flex-col bg-teal-100 p-20">
+      <h1
+        class="mt-28 mb-20 w-full text-center font-sans text-6xl font-semibold uppercase tracking-wide text-amber-500">
+        💛 Happy Birthday 💛
+      </h1>
+      <p
+        class="mt-4 mb-20 w-full text-center font-sans text-5xl font-normal uppercase leading-[4rem] tracking-wide text-rose-500">
+        Thinking about that time we got lost but had the best time finding our
+        way. Through all the ups and downs, your pure spirit, love, and
+        friendship have been a true blessing to this soul. Cheers to a decade of
+        friendship! Can't wait to create the most beautiful memories with you.
+      </p>
+    </div>
+  </Container>
+</Layout>
+
+<script>
+  import confetti from "https://cdn.skypack.dev/canvas-confetti";
+
+  const modal = document.querySelector(".modal");
+  const codeDiv = document.querySelector(".code-div");
+
+  const code = ["butterfly", "dog", "dolphin", "ladybug", "swan"];
+  let codeCheck = [];
+
+  const iconsEvents = document.querySelectorAll(".icon");
+  iconsEvents.forEach((iconEle) => {
+    iconEle.addEventListener("click", (e) => {
+      const iconName = e.target.alt;
+      console.log(iconName);
+      if (codeCheck.includes(iconName)) {
+        const index = codeCheck.indexOf(iconName);
+        if (index > -1) {
+          codeCheck.splice(index, 1);
+          codeCheck.sort();
+          console.log(code, codeCheck);
+        }
+        iconEle.classList.remove("bg-pink-800");
+      } else {
+        codeCheck.push(iconName);
+        codeCheck.sort();
+        iconEle.classList.add("bg-pink-800");
+      }
+      console.log(
+        codeCheck.length,
+        code.length && code.toLocaleString(),
+        codeCheck.toLocaleString()
+      );
+      if (
+        codeCheck.length === code.length &&
+        code.toLocaleString() === codeCheck.toLocaleString()
+      ) {
+        console.log("its a match!!!");
+        confetti();
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+
+        codeDiv.classList.remove("flex");
+        codeDiv.classList.add("hidden");
+      }
+    });
+  });
+</script>
