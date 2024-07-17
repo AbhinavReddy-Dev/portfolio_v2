@@ -15,7 +15,7 @@ const noNavBar = true;
         {
           icons.map((icon) => (
             <img
-              class="icon m-auto rounded-lg border-4 border-pink-300 p-6 hover:cursor-pointer hover:bg-pink-800"
+              class="icon m-auto rounded-lg border-[3px] border-pink-300 p-2 hover:cursor-pointer hover:bg-pink-700 md:p-6"
               src={icon.url}
               alt={icon.name}
             />
@@ -25,19 +25,29 @@ const noNavBar = true;
     </div>
 
     <div
-      class="modal absolute top-0 left-0 z-10 hidden h-fit w-screen flex-col bg-teal-100 p-20">
-      <h1
-        class="mt-28 mb-20 w-full text-center font-sans text-6xl font-semibold uppercase tracking-wide text-amber-500">
-        💛 Happy Birthday 💛
-      </h1>
-      <p
-        class="mt-4 mb-20 w-full text-center font-sans text-5xl font-normal uppercase leading-[4rem] tracking-wide text-rose-500">
-        Thinking about that time we got lost but had the best time finding our
-        way. Through all the ups and downs, your pure spirit, love, and care
-        have been a true blessing to this soul. Cheers to a decade of
-        friendship! Can't wait to create the most beautiful memories with you
-        ☺️.
-      </p>
+      class="modal absolute top-0 left-0 z-10 hidden min-h-screen w-screen flex-col bg-white p-5 md:p-20">
+      <div class="mx-auto my-10 max-w-xl">
+        <!-- <h1
+        class="mt-16 w-full text-center font-sans text-3xl font-semibold uppercase tracking-wide text-amber-500 md:mb-20 md:mt-28 md:text-6xl">
+        Happy Birthday 💛
+      </h1> -->
+        <img
+          class="rounded-lg border-4 border-rose-400"
+          src="/0D3BA251-2F0E-4A85-A461-1CC56B33B5A5.jpeg"
+        />
+        <p
+          class="my-10 w-full text-center font-sans text-xl font-normal uppercase leading-10 tracking-normal text-red-500 md:text-4xl md:leading-[4rem]">
+          Through all the ups and downs, pauses that lasted years, your pure
+          spirit, love, and care have been a true blessing to this soul. Cheers
+          to a decade of friendship and one more year of your existence in this
+          universe! Can't wait to create the most beautiful memories with you.
+          Everything was, is and will be about you, ever! 💝
+        </p>
+        <p
+          class="my-15 w-full text-center font-mono text-lg font-normal uppercase leading-10 tracking-wide text-blue-500 md:text-2xl md:leading-[4rem]">
+          There's something on your face. What is it?
+        </p>
+      </div>
     </div>
   </Container>
 </Layout>
@@ -55,13 +65,13 @@ const noNavBar = true;
   iconsEvents.forEach((iconEle) => {
     iconEle.addEventListener("click", (e) => {
       const iconName = e.target.alt;
-      console.log(iconName);
+      // console.log(iconName);
       if (codeCheck.includes(iconName)) {
         const index = codeCheck.indexOf(iconName);
         if (index > -1) {
           codeCheck.splice(index, 1);
           codeCheck.sort();
-          console.log(code, codeCheck);
+          // console.log(code, codeCheck);
         }
         iconEle.classList.remove("bg-pink-800");
       } else {
@@ -69,16 +79,16 @@ const noNavBar = true;
         codeCheck.sort();
         iconEle.classList.add("bg-pink-800");
       }
-      console.log(
-        codeCheck.length,
-        code.length && code.toLocaleString(),
-        codeCheck.toLocaleString()
-      );
+      // console.log(
+      //   codeCheck.length,
+      //   code.length && code.toLocaleString(),
+      //   codeCheck.toLocaleString()
+      // );
       if (
         codeCheck.length === code.length &&
         code.toLocaleString() === codeCheck.toLocaleString()
       ) {
-        console.log("its a match!!!");
+        // console.log("its a match!!!");
         confetti();
         modal.classList.remove("hidden");
         modal.classList.add("flex");
