@@ -2,8 +2,8 @@
 import Container from "../layouts/container.astro";
 import Layout from "../layouts/page.astro";
 import { icons } from "../data/icons";
-const title = "Happy Birthday 💛";
-const id = "happy-birthday-💛";
+const title = "For You 💛";
+const id = "for-you-💛";
 const noNavBar = true;
 ---
 
@@ -31,21 +31,12 @@ const noNavBar = true;
         class="mt-16 w-full text-center font-sans text-3xl font-semibold uppercase tracking-wide text-amber-500 md:mb-20 md:mt-28 md:text-6xl">
         Happy Birthday 💛
       </h1> -->
-        <img
-          class="rounded-lg border-4 border-rose-400"
-          src="/0D3BA251-2F0E-4A85-A461-1CC56B33B5A5.jpeg"
-        />
+        <img class="image rounded-lg border-4 border-rose-400" src="" />
         <p
-          class="my-10 w-full text-center font-sans text-xl font-normal uppercase leading-10 tracking-normal text-red-500 md:text-4xl md:leading-[4rem]">
-          Through all the ups and downs, pauses that lasted years, your pure
-          spirit, love, and care have been a true blessing to this soul. Cheers
-          to a decade of friendship and to one more year of your existence in
-          this universe! Can't wait to create the most beautiful memories with
-          you. Everything was, is and will be about you, ever! 💝
+          class="text my-10 w-full text-center font-sans text-xl font-normal uppercase leading-10 tracking-normal text-red-500 md:text-4xl md:leading-[4rem]">
         </p>
         <p
-          class="my-15 w-full text-center font-mono text-lg font-normal uppercase leading-10 tracking-wide text-blue-500 md:text-2xl md:leading-[4rem]">
-          There's something on your face. What is it?
+          class="wit my-15 w-full text-center font-mono text-lg font-normal uppercase leading-10 tracking-wide text-blue-500 md:text-2xl md:leading-[4rem]">
         </p>
       </div>
     </div>
@@ -55,11 +46,34 @@ const noNavBar = true;
 <script>
   import confetti from "https://cdn.skypack.dev/canvas-confetti";
 
+  const birthdayImg = "/0D3BA251-2F0E-4A85-A461-1CC56B33B5A5.jpeg";
+  const birthdayText =
+    "Through all the ups and downs, pauses that lasted years, your pure spirit, love, and care have been a true blessing to this soul. Cheers to a decade of friendship and to one more year of your existence in this universe! Can't wait to create the most beautiful memories with you. Everything was, is and will be about you, ever! 💝";
+  const birthdayWit = "There's something on your face. What is it?";
+
+  const monthlyImg = "/13BF43D2-34A0-4669-9F47-21F90C727EFE.jpeg";
+  const monthlyText =
+    "Thanks for sticking around, you are the best and you deserve the best! The extrovert in me didn't understand the ways you reciprocate, I was only looking at it from one way, assuming you'd do it the same way I did. But you're an introvert, your presense and attention is the reciprocation I should've interpreted. I never blame anything on you, because I believe I can understand and treat you better if I had paid close attention to all the things you said yes to.";
+  const monthlyWit =
+    "You are a B💣MB, anyone saying otherwise can kiss my 🍑SS!";
+
   const modal = document.querySelector(".modal");
   const codeDiv = document.querySelector(".code-div");
+  const image = document.querySelector(".image");
+  const text = document.querySelector(".text");
+  const wit = document.querySelector(".wit");
 
-  const code = ["butterfly", "dog", "dolphin", "ladybug", "swan"];
+  const birthdayCode = ["butterfly", "dog", "dolphin", "ladybug", "swan"];
+  const monthlyCode = ["crab", "elephant", "horse", "hummingbird", "tortoise"];
   let codeCheck = [];
+
+  const showContent = () => {
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+
+    codeDiv.classList.remove("flex");
+    codeDiv.classList.add("hidden");
+  };
 
   const iconsEvents = document.querySelectorAll(".icon");
   iconsEvents.forEach((iconEle) => {
@@ -85,16 +99,25 @@ const noNavBar = true;
       //   codeCheck.toLocaleString()
       // );
       if (
-        codeCheck.length === code.length &&
-        code.toLocaleString() === codeCheck.toLocaleString()
+        codeCheck.length === birthdayCode.length &&
+        birthdayCode.toLocaleString() === codeCheck.toLocaleString()
       ) {
         // console.log("its a match!!!");
         confetti();
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-
-        codeDiv.classList.remove("flex");
-        codeDiv.classList.add("hidden");
+        showContent();
+        image.setAttribute("src", birthdayImg);
+        text.innerHTML = birthdayText;
+        wit.innerHTML = birthdayWit;
+      }
+      if (
+        codeCheck.length === monthlyCode.length &&
+        monthlyCode.toLocaleString() === codeCheck.toLocaleString()
+      ) {
+        // console.log("its a match!!!");
+        showContent();
+        image.setAttribute("src", monthlyImg);
+        text.innerHTML = monthlyText;
+        wit.innerHTML = monthlyWit;
       }
     });
   });
