@@ -2,7 +2,7 @@
 // Component Imports
 import ThemeButton from "../../components/ThemeButton.astro";
 import Layout from "../../layouts/page.astro";
-import Header from "../../components/Header/index.astro";
+// import Header from "../../components/Header/index.astro";
 import Container from "../../layouts/container.astro";
 const title = "Abhinav Reddy";
 const id = "home";
@@ -12,71 +12,71 @@ const id = "home";
 
 <Layout content={{ title: "Abhinav Reddy" }}>
   <div
-    class="hidden lg:grid place-items-center h-screen content-center relative my-0">
+    class="relative my-0 hidden h-screen place-items-center content-center lg:grid">
     <div class="absolute top-10 right-10">
       <ThemeButton />
     </div>
     <div
-      class="transform-gpu main-logo z-20 scale-60 bg-main-bg-dark dark:bg-main-bg-light hover:cursor-logo">
+      class="main-logo z-20 scale-60 transform-gpu bg-main-bg-dark hover:cursor-logo dark:bg-main-bg-light">
       <img
         src="/logo/PNG/logo_big.png"
         alt="Abhinav Reddy Logo"
-        class="opacity-0 main-logo z-10 scale-60"
+        class="main-logo z-10 scale-60 opacity-0"
       />
     </div>
     <div
-      class="menu-ele-1 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      class="menu-ele-1 absolute -z-0 grid h-20 w-20 place-items-center content-center hover:cursor-pointer">
       <div
-        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-blue-400 filter blur-sm opacity-80 animate-menu-bg-motion">
+        class="z-5 absolute h-19 w-19 animate-menu-bg-motion bg-blue-400 opacity-80 blur-sm filter hover:cursor-pointer">
       </div>
       <a
         href="/projects#projects"
-        class="-rotate-38 absolute z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        class="z-4 absolute w-max -rotate-38 font-devil text-3xl font-semibold tracking-widest text-black duration-300 ease-in hover:scale-125 dark:text-white">
         PROJECTS
       </a>
     </div>
     <div
-      class="menu-ele-2 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      class="menu-ele-2 absolute -z-0 grid h-20 w-20 place-items-center content-center hover:cursor-pointer">
       <div
-        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-indigo-500 filter blur-sm opacity-80 animate-menu-bg-motion-2">
+        class="z-5 absolute h-19 w-19 animate-menu-bg-motion-2 bg-indigo-500 opacity-80 blur-sm filter hover:cursor-pointer">
       </div>
       <a
         href="/about_me#about_me"
-        class="-rotate-38 fixed z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        class="z-4 fixed w-max -rotate-38 font-devil text-3xl font-semibold tracking-widest text-black duration-300 ease-in hover:scale-125 dark:text-white">
         ABOUT ME
       </a>
     </div>
     <div
-      class="menu-ele-3 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      class="menu-ele-3 absolute -z-0 grid h-20 w-20 place-items-center content-center hover:cursor-pointer">
       <div
-        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-blue-400 filter blur-sm opacity-80 animate-menu-bg-motion-3">
+        class="z-5 absolute h-19 w-19 animate-menu-bg-motion-3 bg-blue-400 opacity-80 blur-sm filter hover:cursor-pointer">
       </div>
       <a
         href="/contact_me#contact_me"
-        class="-rotate-38 absolute z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        class="z-4 absolute w-max -rotate-38 font-devil text-3xl font-semibold tracking-widest text-black duration-300 ease-in hover:scale-125 dark:text-white">
         CONTACT ME
       </a>
     </div>
     <div
-      class="menu-ele-4 w-20 h-20 absolute -z-0 hover:cursor-pointer content-center place-items-center grid">
+      class="menu-ele-4 absolute -z-0 grid h-20 w-20 place-items-center content-center hover:cursor-pointer">
       <div
-        class="w-19 h-19 absolute z-5 hover:cursor-pointer bg-indigo-500 filter blur-sm opacity-80 animate-menu-bg-motion-4">
+        class="z-5 absolute h-19 w-19 animate-menu-bg-motion-4 bg-indigo-500 opacity-80 blur-sm filter hover:cursor-pointer">
       </div>
       <a
         href="/blog_posts#blog_posts"
-        class="-rotate-38 absolute z-4 text-3xl dark:text-white text-black w-max font-semibold font-devil tracking-widest hover:scale-125 ease-in duration-300">
+        class="z-4 absolute w-max -rotate-38 font-devil text-3xl font-semibold tracking-widest text-black duration-300 ease-in hover:scale-125 dark:text-white">
         BLOG POSTS
       </a>
     </div>
     <!-- <Button>Tailwind Button in Astro!</Button> -->
     <h2
-      class="absolute bottom-28 my-info text-lg dark:text-white text-black font-mono animate-text-appear p-6 text-center z-20 backdrop-blur-sm">
-      I am <span class="text-xl font-bold font-mono">Abhinav Reddy</span> 👨🏻‍💻, I develop
+      class="my-info absolute bottom-28 z-20 animate-text-appear p-6 text-center font-mono text-lg text-black backdrop-blur-sm dark:text-white">
+      I am <span class="font-mono text-xl font-bold">Abhinav Reddy</span> 👨🏻‍💻, I develop
       UI/UX 🪄, Full-Stack Websites 🖥️ and Mobile Applications📱.
     </h2>
   </div>
   <div class="flex w-screen lg:hidden">
-    <Header content={(title, id)} />
+    <!-- <Header content={(title, id)} /> -->
   </div>
 </Layout>
 <script>
