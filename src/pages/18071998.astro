@@ -2,8 +2,8 @@
 import Container from "../layouts/container.astro";
 import Layout from "../layouts/page.astro";
 import { icons } from "../data/icons";
-const title = "Mi Fuego 🔥";
-const id = "mi-fuego-🔥";
+const title = "Everything I Do";
+const id = "everything-i-do";
 const noNavBar = true;
 ---
 
@@ -66,6 +66,9 @@ const noNavBar = true;
   const monthlyWit2_2 =
     "Repeat after me! I'm Big. I'm Brave. I'm Beautiful. (Did I hear 'Beautiful' properly? 🫐)";
 
+  const songLink0 =
+    "https://music.apple.com/us/lyrics/1611059147?ts=61.284&te=67.434&l=en&tk=2.v1.K0W2NzNfi2I1PuIpo5NxeA%3D%3D&itscg=50401&itsct=sharing_msg_lyrics";
+
   const modal = document.querySelector(".modal");
   const codeDiv = document.querySelector(".code-div");
   const image = document.querySelector(".image");
@@ -74,6 +77,7 @@ const noNavBar = true;
 
   const birthdayCode = ["butterfly", "dog", "dolphin", "ladybug", "swan"];
   const monthlyCode = ["crab", "elephant", "horse", "hummingbird", "tortoise"];
+  const splCode = ["butterfly", "deer", "dolphin", "dove", "swan"];
   let codeCheck = [];
 
   const showContent = () => {
@@ -127,6 +131,13 @@ const noNavBar = true;
         image.setAttribute("src", monthlyImg);
         text.innerHTML = monthlyText;
         wit.innerHTML = monthlyWit;
+      }
+      if (
+        codeCheck.length === splCode.length &&
+        splCode.toLocaleString() === codeCheck.toLocaleString()
+      ) {
+        // console.log("its a match!!!");
+        window.location.assign(songLink0);
       }
     });
   });
