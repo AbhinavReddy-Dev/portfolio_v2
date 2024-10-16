@@ -31,12 +31,16 @@ const noNavBar = true;
         class="mt-16 w-full text-center font-sans text-3xl font-semibold uppercase tracking-wide text-amber-500 md:mb-20 md:mt-28 md:text-6xl">
         Happy Birthday 💛
       </h1> -->
-        <img class="image rounded-lg border-4 border-rose-400" src="" />
+        <img class="image mx-auto rounded-lg border-4 border-rose-400" src="" />
         <p
           class="text my-10 w-full text-center font-sans text-xl font-normal uppercase leading-10 tracking-normal text-red-500 md:text-4xl md:leading-[4rem]">
         </p>
         <p
           class="wit my-15 w-full text-center font-mono text-lg font-normal uppercase leading-10 tracking-wide text-blue-500 md:text-2xl md:leading-[4rem]">
+        </p>
+
+        <p
+          class="ps text-small md:text-md mt-15 w-full text-center font-mono font-normal italic leading-10 tracking-normal text-gray-500 md:leading-[2rem]">
         </p>
       </div>
     </div>
@@ -57,15 +61,18 @@ const noNavBar = true;
   const monthlyWit =
     "You are a B💣MB, anyone saying otherwise can kiss my 🍑SS!";
 
-  const monthlyImg2 = "/13BF43D2-34A0-4669-9F47-21F90C727EFE.jpeg";
+  const monthlyImg2 = "/our_calls.png";
   const monthlyText2 =
-    "I am grateful for all the time we're spending everyday talking to each other, sharing & developing the bond that was long due and also for sharing your deepest thoughts, feelings, emotions and everything that is personally vulnerable. You never overshare with the right person because you feel heard and all I see so far is GREEN for a million miles in all directions.";
+    "I am grateful for all the time we're spending everyday talking to each other, sharing & developing the bond that was long due and also for sharing our deepest thoughts, feelings, emotions and everything that is personally vulnerable. You never overshare with the right person because you feel heard and all I see so far is GREEN for a million miles in all directions.";
   const monthlyWit2 =
     "You are my inspiration for daily affirmations and I wish to be yours.";
   const monthlyWit2_1 = "Superior Posterior 🍑!";
   const monthlyWit2_2 =
     "Repeat after me! I'm Big. I'm Brave. I'm Beautiful. (Did I hear 'Beautiful' properly? 🫐)";
-
+  const monthlyloveline =
+    "For every single reason if I ever find to not love you, I already have a million reasons to love you more.";
+  const psLine =
+    "PS: This should've been the card for the month of September 😕";
   const songLink0 =
     "https://music.apple.com/us/lyrics/1611059147?ts=61.284&te=67.434&l=en&tk=2.v1.K0W2NzNfi2I1PuIpo5NxeA%3D%3D&itscg=50401&itsct=sharing_msg_lyrics";
 
@@ -74,9 +81,13 @@ const noNavBar = true;
   const image = document.querySelector(".image");
   const text = document.querySelector(".text");
   const wit = document.querySelector(".wit");
+  const ps = document.querySelector(".ps");
 
   const birthdayCode = ["butterfly", "dog", "dolphin", "ladybug", "swan"];
-  const monthlyCode = ["crab", "elephant", "horse", "hummingbird", "tortoise"];
+  const monthlyCodes = [
+    ["crab", "elephant", "horse", "hummingbird", "tortoise"],
+    ["dove", "crab", "butterfly", "jellyfish", "dolphin", "hummingbird"],
+  ];
   const splCode = ["butterfly", "deer", "dolphin", "dove", "swan"];
   let codeCheck = [];
 
@@ -106,37 +117,62 @@ const noNavBar = true;
         codeCheck.sort();
         iconEle.classList.add("bg-pink-800");
       }
-      // console.log(
-      //   codeCheck.length,
-      //   code.length && code.toLocaleString(),
-      //   codeCheck.toLocaleString()
-      // );
+
+      // birthday message
       if (
         codeCheck.length === birthdayCode.length &&
         birthdayCode.toLocaleString() === codeCheck.toLocaleString()
       ) {
-        // console.log("its a match!!!");
         confetti();
         showContent();
         image.setAttribute("src", birthdayImg);
         text.innerHTML = birthdayText;
         wit.innerHTML = birthdayWit;
       }
-      if (
-        codeCheck.length === monthlyCode.length &&
-        monthlyCode.toLocaleString() === codeCheck.toLocaleString()
-      ) {
-        // console.log("its a match!!!");
-        showContent();
-        image.setAttribute("src", monthlyImg);
-        text.innerHTML = monthlyText;
-        wit.innerHTML = monthlyWit;
+      // monthly message
+      // console.log(monthlyCodes.lastIndexOf(codeCheck), codeCheck);
+      // const mCode = () => {
+      for (var i = 0; i < monthlyCodes.length; i++) {
+        console.log(
+          codeCheck.length,
+          monthlyCodes[i].length,
+          monthlyCodes[i].sort().toLocaleString(),
+          codeCheck.toLocaleString()
+        );
+        if (
+          codeCheck.length === monthlyCodes[i].length &&
+          monthlyCodes[i].toLocaleString() === codeCheck.toLocaleString()
+        ) {
+          showContent();
+          if (i === 0) {
+            image.setAttribute("src", monthlyImg);
+            text.innerHTML = monthlyText;
+            wit.innerHTML = monthlyWit;
+          }
+          if (i === 1) {
+            image.setAttribute("src", monthlyImg2);
+            text.innerHTML = monthlyText2;
+            wit.innerHTML = monthlyWit2_1;
+            ps.innerHTML = psLine;
+          }
+
+          return;
+          // return true;
+        }
       }
+      // };
+      // console.log(mCode.sort(), codeCheck.toLocaleString());
+      // if (mCode) {
+      //   showContent();
+      //   image.setAttribute("src", monthlyImg2);
+      //   text.innerHTML = monthlyText2;
+      //   wit.innerHTML = monthlyWit2;
+      // }
+      // songlink
       if (
         codeCheck.length === splCode.length &&
         splCode.toLocaleString() === codeCheck.toLocaleString()
       ) {
-        // console.log("its a match!!!");
         window.location.assign(songLink0);
       }
     });

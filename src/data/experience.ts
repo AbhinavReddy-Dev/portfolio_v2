@@ -5,7 +5,7 @@ export const experience = [
     startDate: "Aug 2023",
     endDate: "Now",
     description:
-      "As a technology consultant I am responsible for providing the best possible solutions to the clients. I work on a variety of technologies such ranging from UI to Machine Learning.",
+      "As a technology consultant I am responsible for providing the best possible solutions to the clients. I work on a variety of solutions ranging from UI design, Full-Stak to Machine Learning.",
     companyLink: "https://www.stacknexus.io/",
     skills: [
       "Full-Stack Development",
