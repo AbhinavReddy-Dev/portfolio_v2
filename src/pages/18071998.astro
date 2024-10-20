@@ -25,7 +25,7 @@ const noNavBar = true;
     </div>
 
     <div
-      class="modal absolute top-0 left-0 z-10 hidden min-h-screen w-screen flex-col bg-white p-5 md:p-20">
+      class="modal absolute top-0 left-0 z-10 hidden min-h-screen w-screen flex-col bg-black p-5 md:p-20">
       <div class="mx-auto my-10 max-w-xl">
         <!-- <h1
         class="mt-16 w-full text-center font-sans text-3xl font-semibold uppercase tracking-wide text-amber-500 md:mb-20 md:mt-28 md:text-6xl">
@@ -72,11 +72,14 @@ const noNavBar = true;
   const monthlyloveline =
     "For every single reason if I ever find to not love you, I already have a million reasons to love you more.";
   const psLine =
-    "PS: This should've been the card for the month of September 😕";
+    "PS: This should've been the card for the month of September 😕, I still know everything in it is true.";
   const songLink0 =
     "https://music.apple.com/us/lyrics/1611059147?ts=61.284&te=67.434&l=en&tk=2.v1.K0W2NzNfi2I1PuIpo5NxeA%3D%3D&itscg=50401&itsct=sharing_msg_lyrics";
 
   const cipherlink = "https://rumkin.com/tools/cipher/spirit-dvd/#";
+
+  const notesLink =
+    "https://www.icloud.com/notes/0e7UF87saJw9WHW1_wIszeEaA#We_need_to_sort_it_out_if_we_care_about_each_other";
 
   const modal = document.querySelector(".modal");
   const codeDiv = document.querySelector(".code-div");
@@ -90,6 +93,10 @@ const noNavBar = true;
     ["crab", "elephant", "horse", "hummingbird", "tortoise"],
     ["dove", "crab", "butterfly", "jellyfish", "dolphin", "hummingbird"],
     ["hamster"],
+    ["horse", "tortoise", "elephant"],
+    ["dove", "hamster", "crab"],
+    ["butterfly", "hamster", "jellyfish"],
+    ["dolphin", "hamster", "hummingbird"],
   ];
   const splCode = ["butterfly", "deer", "dolphin", "dove", "swan"];
   let codeCheck = [];
@@ -156,10 +163,31 @@ const noNavBar = true;
             image.setAttribute("src", monthlyImg2);
             text.innerHTML = monthlyText2;
             wit.innerHTML = monthlyWit2_1;
-            ps.innerHTML = psLine;
+            ps.innerHTML = "Put that Hamster between the two keys in each card";
           }
           if (i === 2) {
             window.location.assign(cipherlink);
+          }
+          if (i === 3) {
+            window.location.assign(notesLink);
+          }
+          if (i === 4) {
+            image.setAttribute("src", "iamgratefulfor.png");
+            wit.innerHTML = "To Love; is the best thing we do in our lives";
+            ps.innerHTML = psLine;
+          }
+          if (i === 5) {
+            window.location.assign(
+              "https://music.apple.com/us/lyrics/1532274658?ts=5.119&te=17.643&l=en&tk=2.v1.62983y%2BRy5Yatiht3iSn2A%3D%3D&itscg=50401&itsct=sharing_msg_lyrics"
+            );
+          }
+          if (i === 6) {
+            image.setAttribute("src", "twopeasants.png");
+            text.innerHTML =
+              "I need you to trust me, that's all it takes for us to experience this life in its totality.";
+            wit.innerHTML =
+              "I need to be with you for the rest of my life and the rest of my life can't wait anymore.";
+            ps.innerHTML = "No pressure. Felt like you needed to know.";
           }
           return;
           // return true;
