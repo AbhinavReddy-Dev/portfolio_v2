@@ -166,10 +166,12 @@ const noNavBar = true;
             ps.innerHTML = "Put that Hamster between the two keys in each card";
           }
           if (i === 2) {
-            window.location.assign(cipherlink);
+            window.open(cipherlink, "_blank");
+            location.reload();
           }
           if (i === 3) {
-            window.location.assign(notesLink);
+            window.open(notesLink, "_blank");
+            location.reload();
           }
           if (i === 4) {
             image.setAttribute("src", "/iamgratefulfor.png");
@@ -177,9 +179,11 @@ const noNavBar = true;
             ps.innerHTML = psLine;
           }
           if (i === 5) {
-            window.location.assign(
-              "https://music.apple.com/us/lyrics/1532274658?ts=5.119&te=17.643&l=en&tk=2.v1.62983y%2BRy5Yatiht3iSn2A%3D%3D&itscg=50401&itsct=sharing_msg_lyrics"
+            window.open(
+              "https://music.apple.com/us/lyrics/1532274658?ts=5.119&te=17.643&l=en&tk=2.v1.62983y%2BRy5Yatiht3iSn2A%3D%3D&itscg=50401&itsct=sharing_msg_lyrics",
+              "_blank"
             );
+            location.reload();
           }
           if (i === 6) {
             image.setAttribute("src", "/twopeasants.png");
