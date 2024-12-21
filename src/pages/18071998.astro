@@ -26,21 +26,21 @@ const noNavBar = true;
 
     <div
       class="modal absolute top-0 left-0 z-10 hidden min-h-screen w-screen flex-col bg-black p-5 md:p-20">
-      <div class="mx-auto my-10 max-w-xl">
+      <div class="mx-auto my-10 max-w-2xl">
         <!-- <h1
         class="mt-16 w-full text-center font-sans text-3xl font-semibold uppercase tracking-wide text-amber-500 md:mb-20 md:mt-28 md:text-6xl">
         Happy Birthday 💛
       </h1> -->
         <img class="image mx-auto rounded-lg border-4 border-rose-400" src="" />
         <p
-          class="text my-10 w-full text-center font-sans text-xl font-normal uppercase leading-10 tracking-normal text-red-500 md:text-4xl md:leading-[4rem]">
+          class="text my-10 w-full text-center font-sans text-xl font-normal uppercase leading-10 tracking-normal text-red-300 md:text-4xl md:leading-[4rem]">
         </p>
         <p
           class="wit my-15 w-full text-center font-mono text-lg font-normal uppercase leading-10 tracking-wide text-blue-500 md:text-2xl md:leading-[4rem]">
         </p>
 
         <p
-          class="ps text-small md:text-md mt-15 w-full text-center font-mono font-normal italic leading-10 tracking-normal text-gray-500 md:leading-[2rem]">
+          class="ps text-small md:text-md mt-20 w-full text-center font-mono font-normal italic leading-10 tracking-normal text-gray-500 md:leading-[2rem]">
         </p>
       </div>
     </div>
@@ -97,6 +97,8 @@ const noNavBar = true;
     ["dove", "hamster", "crab"],
     ["butterfly", "hamster", "jellyfish"],
     ["dolphin", "hamster", "hummingbird"],
+    ["ladybug", "crab", "swan", "hamster", "butterfly"],
+    ["swan", "dolphin", "penguin"],
   ];
   const splCode = ["butterfly", "deer", "dolphin", "dove", "swan"];
   let codeCheck = [];
@@ -194,8 +196,28 @@ const noNavBar = true;
             ps.innerHTML =
               "No pressure. Felt like you needed to know that I'm locked in on you.";
           }
+          if (i === 7) {
+            text.innerHTML =
+              "I won’t burden you with expectations beyond your relationship and life values, anything more means that I’m asking you to change, which I will not do. I understand that you and I had different childhood experiences but that doesn’t limit our ability to understand each other better, in fact this very thing is a tool for us empathize better and treat each other with compassion, respect, patience and love ❤️." +
+              "\n" +
+              "I understand that our traumas will be triggered as we proceed and I am very grateful for how we are able to communicate about our triggers and how we are learning to handle them ourselves and be patient with each other. I can see that we have the mindset to make things work, we will always be there to support each other in the process. And you must know that I am working on my thoughts and actions around you, I will handle you gently 😇, the way you deserve to be taken care of." +
+              "\n" +
+              "I would very much encourage you to express any feelings, emotions and needs that you have, I want to do everything that you need from me, just a little help from you goes a long way for us both 💛. The longer you keep your emotions and feelings within you, the harder the journey gets. YOLO. I would encourage you to do it slowly at your own pace. I only want to do right things with you ✨.";
+            wit.innerHTML =
+              "I would like to have a smut 😈 reading session once you get home from work but it will be 'HARD' 🪵 for me & I will get late to the work 😶‍🌫️";
+            ps.innerHTML =
+              "From smelling like Plumeria 🌺 to old people, I will be by your side 🐹 till the end.";
+          }
+          if (i === 8) {
+            text.innerHTML =
+              "I liked the way you showed interest in my hairstyle, and how you were open about the changes I needed to make. I appreciate the amount of time and energy you spent to make me come up with a hairstyle. The credit to all the compliments I received should go to you 💯. I am grateful for every second you spend on me. I am grateful for the way you show interest in my life. I like the way you understand that I need to see you and spend time with you. I like it when you show me glimpses of how your day is going. I like it when we spend time watching movies and shows. I like it when you let me take care of you in my capacity during your periods. At some point in the past, I really wanted all of this to happen, it was just a dream then, now it is a reality, and I am grateful 😌 for it. Just know that I will do anything to treat you better everyday. I think I'm in Love.";
+            wit.innerHTML =
+              "I can't think of a cheesy line right now, but without you my life is like a Swiss cheese 🧀";
+            ps.innerHTML =
+              "Japan 🇯🇵 is happening, we're 🎎 finally meeting in person after ages!";
+            // return true;
+          }
           return;
-          // return true;
         }
       }
       // };
